@@ -1,0 +1,61 @@
+.EmployeeView {
+	text-align: left !important;
+	display: flex;
+}
+
+.EmployeeView .main-header {
+	/* margin: 5% 12% 0 12%; */
+	font-size: 1.8rem;
+}
+
+.EmployeeView table {
+	margin-top: 5%;
+	width: 100%;
+	/* border-collapse: separate; */
+	/* border-spacing: 10px; */
+	/* margin-left: 2%; */
+    text-align: center;
+}
+
+.EmployeeView table thead {
+    font-size: 1.2rem;
+}
+
+.EmployeeView table .users {
+	height: 76%;
+	border-width: 15px;
+	margin-left: 12%;
+    background-color: #fafafa;
+    text-align: center
+}
+
+.EmployeeView table .users .user {
+    text-align: center;
+}
+
+.EmployeeView .users .user img {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	border: 1px solid #0000003b;
+	padding: 0.6%;
+}
+
+.EmployeeView .users .user .details {
+	margin-left: 8%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.EmployeeView table .actions i {
+    margin-left: 0.8rem;
+    font-size: 1rem;
+}
+
+.EmployeeView table .actions i:nth-child(2) {
+    border-radius: 50%;
+    padding: 0.2rem;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #000000;
+}
