@@ -1,0 +1,32 @@
+.EmployeeAdd {
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.EmployeeAdd form {
+    margin-left: 12rem;
+}
+
+.EmployeeAdd .detail {
+    margin-top: 1rem;
+}
+
+.EmployeeAdd form .detail label {
+    /* background-color: #000000; */
+}
+
+.EmployeeAdd form .detail input {
+    /* display: block; */
+    position: absolute;
+    left: 22rem;
+    width: 15rem;
+    height: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid #cfcdcd;
+    padding-left: 10px;
+}
+
+.EmployeeAdd form .btn {
+    margin: 1rem;
+}
