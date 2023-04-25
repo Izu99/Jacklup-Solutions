@@ -1,0 +1,39 @@
+.PersonalDetails {
+	display: flex;
+}
+
+.PersonalDetails table {
+	margin-left: 12rem;
+	background-color: #f3f1f1;
+	margin-top: 12rem;
+	width: 20%;
+	padding: 2rem;
+	/* border-collapse: collapse; */
+	/* border-spacing: 40px; */
+}
+
+.PersonalDetails table tr {
+	padding-top: 12rem;
+
+	/* background-color: #000000; */
+}
+
+.PersonalDetails table:nth-child(1) tr td {
+	padding-top: 2rem;
+}
+
+.PersonalDetails table:nth-child(1) tr td label {
+	background-color: #000000;
+	position: relative;
+	top: 2rem;
+}
+
+.PersonalDetails table:nth-child(2) tr td {
+	padding-top: 0.5rem;
+}
+
+.PersonalDetails table:nth-child(2) tr label {
+	background-color: rgb(45, 113, 177);
+	position: relative;
+	top: 2rem;
+}
