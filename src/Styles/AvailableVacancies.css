@@ -1,0 +1,59 @@
+.availablevacancies {
+	/* text-align: left !important; */
+	/* display: flex; */
+}
+
+.availablevacancies .main-header {
+	/* margin: 5% 12% 0 12%; */
+	/* font-size: 1.8rem; */
+}
+
+.availablevacancies table {
+	/* margin-top: 5%; */
+	width: 70%;
+	border-collapse: separate;
+	border-spacing: 10px;
+	margin-left: 15%;
+}
+
+.availablevacancies table .users {
+
+}
+
+.availablevacancies .users .user {
+	border: 2px solid #a3a3a32f;
+	padding-left: 2%;
+	border-radius: 65px;
+	/* margin-bottom: 2%; */
+}
+
+.availablevacancies table .users .user h2 {
+    font-size: 1.1rem;
+    margin-left: 2rem;
+    margin-top: 1.4rem;
+}
+
+.availablevacancies .users .user .details {
+	/* margin-left: 8%; */
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.availablevacancies .users .user button {
+	margin: 2% 2% 0 0;
+	width: 20%;
+	height: 2rem;
+	border: none;
+	border-radius: 15px;
+	background-color: #1d371c;
+	color: #ffffff;
+}
+
+.availablevacancies .users .user button:hover {
+	background-color: #122511;
+}
+/* 
+.availablevacancies .users .user .details p {
+    margin-top: -6%;
+}  */
