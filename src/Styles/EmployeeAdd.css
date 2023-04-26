@@ -1,11 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
+
 .EmployeeAdd {
     position: relative;
     min-height: 100vh;
     height: 100%;
 }
 
+.EmployeeAdd .header {
+    display: flex;
+}
+
+.EmployeeAdd .header h2 {
+    margin-left: 20rem;
+    background-color: #9734907e;
+    padding: 0.6rem 5rem;
+}
+
+.EmployeeAdd .profile {
+    margin: 5rem 0 5rem 15rem;
+    display: flex;
+}
+
+.EmployeeAdd .profile img {
+    width: 10rem;
+}
+
+.EmployeeAdd .profile h2 {
+    margin-left: 2rem;
+}
+
+.EmployeeAdd .profile p {
+    margin-top: 4rem;
+    position: absolute;
+    margin-left: 12rem;
+}
+
 .EmployeeAdd form {
     margin-left: 12rem;
+    background-color: #9734905e;
+    width: 30rem;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.EmployeeAdd .title h2 {
+    margin: 1rem 12rem;
+    background-color: #97349054;
+    padding: 0.6rem 0.8rem;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 10rem;
+    font-family: 'Josefin Sans', sans-serif;
+    border-radius: 5px;
 }
 
 .EmployeeAdd .detail {
