@@ -5,6 +5,22 @@ import { Link } from "react-router-dom";
 import "../Styles/PersonalDetails.css";
 
 export default class PersonalDetails extends Component {
+
+	constructor(props) {
+		super(props);
+
+		this.delete = this.delete.bind(this);
+	}
+	
+	delete() {
+		axios
+			.delete('http://localhost:4000/emplooyee/delete/' + this.props.obj._id)
+			.then(this.setState({ redirect: true }))
+			.catch((err) => console.log(err));
+		alert('Your Account Successfully Deleted....');
+		window.location.replace('/login');
+	}
+
 	render() {
 		return (
 			<div className='PersonalDetails'>
@@ -21,42 +37,43 @@ export default class PersonalDetails extends Component {
 					</div>
 				</div>
 				<table className='table table-striped'>
+				<tr>
+						<td style={{ fontWeight: "bold" }}>Name</td>
+						<td>{this.props.obj.name}</td>
+					</tr>
 					<tr>
 						<td style={{ fontWeight: "bold" }}>Email</td>
-						{/* <td>{this.props.obj.firstName}</td> */}
+						<td>{this.props.obj.email}</td>
 					</tr>
 					<tr>
 						<td style={{ fontWeight: "bold" }}>Mobile</td>
-						{/* <td>{this.props.obj.lastName}</td> */}
+						<td>{this.props.obj.mobile}</td>
 					</tr>
 					<tr>
 						<td style={{ fontWeight: "bold" }}>Address</td>
-						{/* <td>{this.props.obj.email}</td> */}
+						<td>{this.props.obj.adress}</td>
 					</tr>
 					<tr>
 						<td style={{ fontWeight: "bold" }}>Age</td>
-						{/* <td>{this.props.obj.countryCode}</td> */}
+						<td>{this.props.obj.age}</td>
 					</tr>
-					<tr>
+					{/* <tr>
 						<td style={{ fontWeight: "bold" }}>Emp No</td>
-						{/* <td>{this.props.obj.phoneNu}</td> */}
-					</tr>
-					<tr>
-						<td style={{ fontWeight: "bold" }}>Joined Date</td>
-						{/* <td>{this.props.obj.nic}</td> */}
-					</tr>
-					{/* <tr className='profile-actions'>
+						{/* <td>{this.props.obj.phoneNu}</td> *
+					</tr> */}
+				
+					 <tr className='profile-actions'>
 						<td>
-							<button className='btn'> */}
-								{/* <Link to={'/Editregister/' + this.props.obj._id}>Edit</Link> */}
-							{/* </button> */}
-						{/* </td> */}
-						{/* <td>
+							<button className='btn'> 
+								 <Link to={'/EditEmployee/' + this.props.obj._id}>Edit</Link> */}
+							 </button> 
+						</td> 
+						 <td>
 							<button className='btn' onClick={this.delete}>
 								Delete Account
 							</button>
-						</td> */}
-					{/* </tr> */}
+						</td> 
+					 </tr> 
 				</table>
 			</div>
 		);

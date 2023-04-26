@@ -14,7 +14,7 @@ export default class PersonalTableThrow extends Component {
 
 	delete() {
 		axios
-			.delete('http://localhost:4000/tourist/delete/' + this.props.obj._id)
+			.delete('http://localhost:4000/emplooyee/delete/' + this.props.obj._id)
 			.then(this.setState({ redirect: true }))
 			.catch((err) => console.log(err));
 		alert('Your Account Successfully Deleted....');
@@ -26,36 +26,36 @@ export default class PersonalTableThrow extends Component {
 			<div className='pro-details'>
 				<table className='table table-striped'>
 					<tr>
-						<td style={{ fontWeight: 'bold' }}>First name</td>
-						<td>{this.props.obj.firstName}</td>
+						<td style={{ fontWeight: 'bold' }}> name</td>
+						<td>{this.props.obj.name}</td>
 					</tr>
 					<tr>
-						<td style={{ fontWeight: 'bold' }}>Last Name</td>
-						<td>{this.props.obj.lastName}</td>
+						<td style={{ fontWeight: 'bold' }}>age</td>
+						<td>{this.props.obj.age}</td>
 					</tr>
 					<tr>
-						<td style={{ fontWeight: 'bold' }}>Email</td>
+						<td style={{ fontWeight: 'bold' }}>mobile</td>
+						<td>{this.props.obj.mobile}</td>
+					</tr>
+					<tr>
+						<td style={{ fontWeight: 'bold' }}>tel</td>
+						<td>{this.props.obj.tel}</td>
+					</tr>
+					<tr>
+						<td style={{ fontWeight: 'bold' }}>email</td>
 						<td>{this.props.obj.email}</td>
 					</tr>
 					<tr>
-						<td style={{ fontWeight: 'bold' }}>Country Code</td>
-						<td>{this.props.obj.countryCode}</td>
-					</tr>
-					<tr>
-						<td style={{ fontWeight: 'bold' }}>Phone Number</td>
-						<td>{this.props.obj.phoneNu}</td>
-					</tr>
-					<tr>
 						<td style={{ fontWeight: 'bold' }}>Nic</td>
-						<td>{this.props.obj.nic}</td>
+						<td>{this.props.obj.adress}</td>
 					</tr>
 					<tr>
-						<td style={{ fontWeight: 'bold' }}>address</td>
-						<td>{this.props.obj.address}</td>
+						<td style={{ fontWeight: 'bold' }}>password</td>
+						<td>{this.props.obj.password}</td>
 					</tr>
 					<tr>
-						<td style={{ fontWeight: 'bold' }}>nationality</td>
-						<td>{this.props.obj.nationality}</td>
+						<td style={{ fontWeight: 'bold' }}>cpassword</td>
+						<td>{this.props.obj.cpassword}</td>
 					</tr>
 					<tr>
 						<td style={{ fontWeight: 'bold' }}>country</td>
