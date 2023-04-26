@@ -3,6 +3,12 @@ import axios from "axios";
 // import PersonalTableThrow from "./PersonalTableThrow";
 import { Link } from "react-router-dom";
 import "../Styles/PersonalDetails.css";
+import logo from "../images/logo.svg";
+import profile from "../images/profile-image.svg";
+import ellipse1 from "../images/ellipse1.svg";
+import polygon from "../images/Polygon.svg";
+import ellipse2 from "../images/ellipse2.svg";
+import ellipse3 from "../images/ellipse3.svg";
 
 export default class PersonalDetails extends Component {
 
@@ -24,17 +30,9 @@ export default class PersonalDetails extends Component {
 	render() {
 		return (
 			<div className='PersonalDetails'>
-				<div className='profile-top'>
-					<div className='left-details'>
-						<h2>Profile Details</h2>
-						<div className='profile-image-container'>
-							<img
-								src='https://thereadtoday.com/wp-content/uploads/2020/12/solo-male-travel-800x445.jpg'
-								alt='Profile'
-								className='profile-image'
-							/>
-						</div>
-					</div>
+				<div className='header'>
+					<img src={logo} alt='' />
+					<h2>My Profile</h2>
 				</div>
 				<table className='table table-striped'>
 				<tr>
@@ -75,6 +73,7 @@ export default class PersonalDetails extends Component {
 						</td> 
 					 </tr> 
 				</table>
+				<button type='submit'>Monthly Work Report</button>
 			</div>
 		);
 	}
