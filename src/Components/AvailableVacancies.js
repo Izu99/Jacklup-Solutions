@@ -6,14 +6,14 @@ export default class AvailableVacancies extends Component {
 	render() {
 		return (
 			<div className='availablevacancies'>
-				<h2 className='main-header'>Vacancies</h2>
+				<h2 className='main-header'>Become A Chapter In The Progression Of Innovation</h2>
 
 				<table class='table table-striped'>
-				
+					<h2>Available Vacancies</h2>
 					<tr className='users'>
 						<td className='user'>
 							<div className='details'>
-								<h2>Web Developer</h2>
+								<p>Web Developer</p>
 								<button type='submit'>Apply</button>
 							</div>
 						</td>
@@ -21,7 +21,23 @@ export default class AvailableVacancies extends Component {
                     <tr className='users'>
 						<td className='user'>
 							<div className='details'>
-								<h2>Web Developer</h2>
+								<p>Event Organizer</p>
+								<button type='submit'>Apply</button>
+							</div>
+						</td>
+					</tr>
+					<tr className='users'>
+						<td className='user'>
+							<div className='details'>
+								<p>Graphic Designer</p>
+								<button type='submit'>Apply</button>
+							</div>
+						</td>
+					</tr>
+					<tr className='users'>
+						<td className='user'>
+							<div className='details'>
+								<p>Financial Manager</p>
 								<button type='submit'>Apply</button>
 							</div>
 						</td>

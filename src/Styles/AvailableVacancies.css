@@ -1,23 +1,49 @@
 .availablevacancies {
 	/* text-align: left !important; */
-	/* display: flex; */
+	display: flex;
+	margin: 0;
+	padding: 0;
+	/* background-color: #000000; */
 }
 
 .availablevacancies .main-header {
 	/* margin: 5% 12% 0 12%; */
 	/* font-size: 1.8rem; */
+
+	position: absolute;
+	/* width: 90rem; */
+	/* height: 119px; */
+	left: 8rem;
+	top: 2rem;
+	font-family: "Josefin Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2rem;
+	line-height: 0.8rem;
+	letter-spacing: 0.2em;
+	color: #000000;
 }
 
 .availablevacancies table {
-	/* margin-top: 5%; */
+	margin-top: 10%;
 	width: 70%;
 	border-collapse: separate;
 	border-spacing: 10px;
 	margin-left: 15%;
 }
 
-.availablevacancies table .users {
+.availablevacancies table h2 {
+	font-family: "Josefin Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 16px;
+	/* or 40% */
+	text-align: center;
+	color: #973490;
+}
 
+.availablevacancies table .users {
 }
 
 .availablevacancies .users .user {
@@ -27,10 +53,12 @@
 	/* margin-bottom: 2%; */
 }
 
-.availablevacancies table .users .user h2 {
-    font-size: 1.1rem;
-    margin-left: 2rem;
-    margin-top: 1.4rem;
+.availablevacancies table .users .user p {
+	font-size: 1.2rem;
+	margin-left: 2rem;
+	margin-top: 1.4rem;
+	font-family: 'Josefin Sans';
+	font-weight: bold;
 }
 
 .availablevacancies .users .user .details {
@@ -39,14 +67,13 @@
 	justify-content: space-between;
 }
 
-
 .availablevacancies .users .user button {
-	margin: 2% 2% 0 0;
+	margin: 1% 2% 0 0;
 	width: 20%;
 	height: 2rem;
 	border: none;
 	border-radius: 15px;
-	background-color: #1d371c;
+	background-color: #4C00B0;
 	color: #ffffff;
 }
 
