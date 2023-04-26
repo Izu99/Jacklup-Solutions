@@ -1,20 +1,47 @@
 .availablevacancies {
-	/* text-align: left !important; */
 	display: flex;
 	margin: 0;
 	padding: 0;
-	/* background-color: #000000; */
+}
+
+.availablevacancies nav img {
+	position: absolute;
+
+}
+
+.availablevacancies nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0px;
+	gap: 60px;
+	position: absolute;
+	left: 22rem;
+	top: 1rem;
+	list-style: none;
+}
+
+.availablevacancies nav ul li {
+	font-family: "Josefin Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 18px;
+	color: #000000;
+}
+
+.availablevacancies nav .profile img {
+	width: 3rem;
+	margin-left: 70rem;
+	margin-top: 1rem;
 }
 
 .availablevacancies .main-header {
-	/* margin: 5% 12% 0 12%; */
-	/* font-size: 1.8rem; */
 
 	position: absolute;
-	/* width: 90rem; */
-	/* height: 119px; */
 	left: 8rem;
-	top: 2rem;
+	top: 6rem;
 	font-family: "Josefin Sans";
 	font-style: normal;
 	font-weight: 400;
@@ -25,11 +52,15 @@
 }
 
 .availablevacancies table {
-	margin-top: 10%;
+	margin-top: 15%;
 	width: 70%;
 	border-collapse: separate;
 	border-spacing: 10px;
 	margin-left: 15%;
+	background-color: #ffffff;
+	box-shadow: 0px 0px 10px #f0eeee;
+	padding: 2rem;
+	border-radius: 15px;
 }
 
 .availablevacancies table h2 {
@@ -57,7 +88,7 @@
 	font-size: 1.2rem;
 	margin-left: 2rem;
 	margin-top: 1.4rem;
-	font-family: 'Josefin Sans';
+	font-family: "Josefin Sans";
 	font-weight: bold;
 }
 
@@ -73,14 +104,49 @@
 	height: 2rem;
 	border: none;
 	border-radius: 15px;
-	background-color: #4C00B0;
+	background-color: #4c00b0;
 	color: #ffffff;
 }
 
 .availablevacancies .users .user button:hover {
-	background-color: #122511;
+	background-color: #400192;
 }
 /* 
 .availablevacancies .users .user .details p {
     margin-top: -6%;
 }  */
+
+
+.availablevacancies img.ellipse1 {
+	position: absolute;
+	width: 10rem;
+	margin-top: 6rem;
+	opacity: 0.4;
+}
+
+
+.availablevacancies img.ellipse2 {
+    /* position: absolute; */
+	/* height: 69px; */
+	width: 4rem;
+    margin-left: 10rem;
+    margin-top: 2rem;
+	border-radius: 0px;
+}
+
+.availablevacancies img.ellipse3 {
+	position: absolute;
+	width: 10rem;
+	bottom: 0;
+	right: 0;
+	opacity: 0.4;
+}
+
+
+.availablevacancies .polygon1 {
+	position: absolute;
+	top: 38rem;
+	left: 38rem;
+	opacity: 0.4;
+	width: 2rem;
+}

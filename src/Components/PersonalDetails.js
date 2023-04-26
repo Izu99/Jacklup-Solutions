@@ -63,7 +63,7 @@ export default class PersonalDetails extends Component {
 					 <tr className='profile-actions'>
 						<td>
 							<button className='btn'> 
-								 <Link to={'/EditEmployee/' + this.props.obj._id}>Edit</Link> */}
+								 {/* <Link to={'/EditEmployee/' + this.props.obj._id}>Edit</Link> } */}
 							 </button> 
 						</td> 
 						 <td>
