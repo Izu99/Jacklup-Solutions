@@ -10,18 +10,18 @@ import ellipse3 from "../images/ellipse3.svg";
 import "../Styles/EmployeeAdd.css";
 
 export default class EmployeeAdd extends Component {
-	constructor(props) {
+    constructor(props) {
 		super(props);
-		this.onChangeename = this.onChangeename.bind(this);
-		this.onChangeeage = this.onChangeeage.bind(this);
-		this.onChangeemobile = this.onChangeemobile.bind(this);
-		this.onChangeetel = this.onChangeetel.bind(this);
-		this.onChangeeemail = this.onChangeeemail.bind(this);
-		this.onChangeeadress = this.onChangeeadress.bind(this);
-		this.onChangeepassword = this.onChangeepassword.bind(this);
-		this.onChangeecpassword = this.onChangeecpassword.bind(this);
-		this.onChangeestatus = this.onChangeestatus.bind(this);
-		this.onChangeeposision = this.onChangeeposision.bind(this);
+		this.onChangename = this.onChangename.bind(this);
+		this.onChangeage = this.onChangeage.bind(this);
+		this.onChangemobile = this.onChangemobile.bind(this);
+		this.onChangetel = this.onChangetel.bind(this);
+		this.onChangeemail = this.onChangeemail.bind(this);
+		this.onChangeposision = this.onChangeposision.bind(this);
+        this.onChangeadress = this.onChangeadress.bind(this);
+		this.onChangepassword = this.onChangepassword.bind(this);
+		this.onChangecpassword = this.onChangecpassword.bind(this);
+        this.onChangestatus = this.onChangestatus.bind(this);
 
 		this.onSubmit = this.onSubmit.bind(this);
 
@@ -31,59 +31,60 @@ export default class EmployeeAdd extends Component {
 			mobile: "",
 			tel: "",
 			email: "",
+			posision: "",
 			adress: "",
 			password: "",
-			cpassword: "",
-			posision: "",
-			status: "",
+            cpassword: "",
+            status: "",
 		};
 	}
-	onChangeename(e) {
+	onChangename(e) {
 		this.setState({
 			name: e.target.value,
 		});
 	}
-	onChangeeage(e) {
+	onChangeage(e) {
 		this.setState({
 			age: e.target.value,
 		});
 	}
-	onChangeemobile(e) {
+	onChangemobile(e) {
 		this.setState({
 			mobile: e.target.value,
 		});
 	}
-	onChangeetel(e) {
+	onChangetel(e) {
 		this.setState({
 			tel: e.target.value,
 		});
 	}
-	onChangeeemail(e) {
+	onChangeemail(e) {
 		this.setState({
 			email: e.target.value,
 		});
 	}
-	onChangeeadress(e) {
-		this.setState({
-			adress: e.target.value,
-		});
-	}
-	onChangeepassword(e) {
-		this.setState({
-			password: e.target.value,
-		});
-	}
-	onChangeecpassword(e) {
-		this.setState({
-			cpassword: e.target.value,
-		});
-	}
-	onChangeestatus(e) {
+	onChangeposision(e) {
 		this.setState({
 			posision: e.target.value,
 		});
 	}
-	onChangeeposision(e) {
+    onChangeadress(e) {
+		this.setState({
+			adress: e.target.value,
+		});
+	}
+    onChangecpassword(e) {
+		this.setState({
+			cpassword: e.target.value,
+		});
+	}
+	onChangepassword(e) {
+		this.setState({
+			password: e.target.value,
+		});
+	}
+	
+    onChangestatus(e) {
 		this.setState({
 			status: e.target.value,
 		});
@@ -97,17 +98,19 @@ export default class EmployeeAdd extends Component {
 			mobile: this.state.mobile,
 			tel: this.state.tel,
 			email: this.state.email,
+			posision: this.state.posision,
 			adress: this.state.adress,
 			password: this.state.password,
-			cpassword: this.state.cpassword,
-			posision: this.state.posision,
-			status: this.state.status,
+            cpassword: this.state.cpassword,
+            status: this.state.status,
 		};
 
-		if (this.state.password === this.state.cpassword) {
-			if (this.state.age.length > 17) {
-				if (this.state.mobile.length === 10) {
-					if (this.state.tel.length === 10) {
+		// if(this.state.cNumber.length > 4){
+
+        // if (this.state.password === this.state.cpassword) {
+		// 	if (this.state.age.length > 17) {
+		// 		if (this.state.mobile.length === 10) {
+		// 			if (this.state.tel.length === 10) {
 						axios
 							.post("http://localhost:4000/emplooyee/add", obj)
 							.then((res) => {
@@ -118,32 +121,34 @@ export default class EmployeeAdd extends Component {
 									mobile: "",
 									tel: "",
 									email: "",
+                                    posision: "",
 									adress: "",
 									password: "",
 									cpassword: "",
-									posision: "",
 									status: "",
 								});
 								console.log(res.data);
 							});
-						this.props.history.push("/inventoryView");
-					} else {
-						alert("Invalid phone Number.. Pleace enter more than 10 digit.");
-					}
-				} else {
-					alert("Invalid phone number.. Pleace enter more than 1o digits.");
-				}
-			} else {
-				alert("your age shoud ne more than 18");
-			}
-		} else {
-			alert("Mismatch password.. Pleace enter same password");
-		}
-	}
+						this.props.history.push("/");
+	// 				} else {
+	// 					alert("Invalid phone Number.. Pleace enter more than 10 digit.");
+	// 				}
+	// 			} else {
+	// 				alert("Invalid phone number.. Pleace enter more than 1o digits.");
+	// 			}
+	// 		} else {
+	// 			alert("your age shoud ne more than 18");
+	// 		}
+	// 	} else {
+	// 		alert("Mismatch password.. Pleace enter same password");
+	// 	}
+	// }
+                        }
 
 	render() {
 		return (
 			<div className='EmployeeAdd'>
+            <form onSubmit={this.onSubmit} >
 				<img src={logo} alt='' />
 				<h2>New Employee Record</h2>
 				<img src={ellipse1} alt='' className='ellipse1' />
@@ -156,14 +161,14 @@ export default class EmployeeAdd extends Component {
 					</div>
 				</div>
 				<div className='form'>
-					<form onSubmit={this.onSubmit} className='form1'>
+					<form className='form1'>
 						<div className='detail'>
 							<label htmlFor=''>Name</label>
 							<input
 								type='text'
 								required
 								value={this.state.name}
-								onChange={this.onChangeename}
+								onChange={this.onChangename}
 							/>
 						</div>
 						<div className='detail'>
@@ -172,7 +177,7 @@ export default class EmployeeAdd extends Component {
 								type='number'
 								required
 								value={this.state.age}
-								onChange={this.onChangeeage}
+								onChange={this.onChangeage}
 							/>
 						</div>
 						<div className='contact'>
@@ -182,7 +187,7 @@ export default class EmployeeAdd extends Component {
 									type='number'
 									required
 									value={this.state.mobile}
-									onChange={this.onChangeemobile}
+									onChange={this.onChangemobile}
 								/>
 							</div>
 							<div className='detail tel'>
@@ -191,7 +196,7 @@ export default class EmployeeAdd extends Component {
 									type='number'
 									required
 									value={this.state.tel}
-									onChange={this.onChangeetel}
+									onChange={this.onChangetel}
 								/>
 							</div>
 						</div>
@@ -201,7 +206,7 @@ export default class EmployeeAdd extends Component {
 								type='email'
 								required
 								value={this.state.email}
-								onChange={this.onChangeeemail}
+								onChange={this.onChangeemail}
 							/>
 						</div>
 						<div className='detail'>
@@ -210,7 +215,7 @@ export default class EmployeeAdd extends Component {
 								type='address'
 								required
 								value={this.state.adress}
-								onChange={this.onChangeeadress}
+								onChange={this.onChangeadress}
 							/>
 						</div>
 
@@ -220,7 +225,7 @@ export default class EmployeeAdd extends Component {
 								type='text'
 								required
 								value={this.state.posision}
-								onChange={this.onChangeeposision}
+								onChange={this.onChangeposision}
 							/>
 						</div>
 					</form>
@@ -233,7 +238,7 @@ export default class EmployeeAdd extends Component {
 								type='password'
 								required
 								value={this.state.password}
-								onChange={this.onChangeepassword}
+								onChange={this.onChangepassword}
 							/>
 						</div>
 						<div className='detail'>
@@ -242,9 +247,10 @@ export default class EmployeeAdd extends Component {
 								type='password'
 								required
 								value={this.state.cpassword}
-								onChange={this.onChangeecpassword}
+								onChange={this.onChangecpassword}
 							/>
 						</div>
+                       
 					</form>
 				</div>
 				<img src={polygon} alt='' className='polygon1' />
@@ -263,8 +269,10 @@ export default class EmployeeAdd extends Component {
                         <input type="password" required value={this.state.password} onChange = {this.onChangeecpassword}/>
                     </div> */}
 
-				<button className='btn'> Save</button>
-				<button className='btn'> Cancel</button>
+                    <button type='submit' className='btn'> Save</button>
+				
+                </form>
+                <button className='btn'> Cancel</button>
 			</div>
 		);
 	}
