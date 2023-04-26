@@ -12,7 +12,7 @@ import PageNotFound from "./Components/PageNotFound";
 import EmployeeAdd from "./Components/EmployeeAdd";
 import EmployeeView from "./Components/EmployeeView";
 import AvailableVacancies from "./Components/AvailableVacancies";
-import PersonalDetails from "./Components/PersonalDetails";
+import PersonalDetails from "./Components/PersonalDetails"
 class App extends Component {
 	render() {
 		return (
