@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-import logo from "../images/logo.svg";
-import profile from "../images/profile-image3.svg";
-import img1 from "../images/bottom-image.svg";
-import ellipse1 from "../images/ellipse1.svg";
-import polygon from "../images/Polygon.svg";
-import ellipse2 from "../images/ellipse2.svg";
-import ellipse3 from "../images/ellipse3.svg";
-import "../Styles/EmployeeAdd.css";
+import logo from "../../images/logo.svg";
+import profile from "../../images/profile-image3.svg";
+import img1 from "../../images/bottom-image.svg";
+import ellipse1 from "../../images/ellipse1.svg";
+import polygon from "../../images/Polygon.svg";
+import ellipse2 from "../../images/ellipse2.svg";
+import ellipse3 from "../../images/ellipse3.svg";
+import "../../Styles/EmployeeAdd.css";
 
 export default class EmployeeAdd extends Component {
 	constructor(props) {

@@ -2,29 +2,28 @@ import React, { Component } from "react";
 import axios from "axios";
 // import PersonalTableThrow from "./PersonalTableThrow";
 import { Link } from "react-router-dom";
-import "../Styles/PersonalDetails.css";
-import logo from "../images/logo.svg";
-import profile from "../images/profile-image.svg";
-import ellipse1 from "../images/ellipse1.svg";
-import polygon from "../images/Polygon.svg";
-import ellipse2 from "../images/ellipse2.svg";
-import ellipse3 from "../images/ellipse3.svg";
+import "../../Styles/PersonalDetails.css";
+import logo from "../../images/logo.svg";
+import profile from "../../images/profile-image.svg";
+import ellipse1 from "../../images/ellipse1.svg";
+import polygon from "../../images/Polygon.svg";
+import ellipse2 from "../../images/ellipse2.svg";
+import ellipse3 from "../../images/ellipse3.svg";
 
 export default class PersonalDetails extends Component {
-
 	constructor(props) {
 		super(props);
 
 		this.delete = this.delete.bind(this);
 	}
-	
+
 	delete() {
 		axios
-			.delete('http://localhost:4000/emplooyee/delete/' + this.props.obj._id)
+			.delete("http://localhost:4000/emplooyee/delete/" + this.props.obj._id)
 			.then(this.setState({ redirect: true }))
 			.catch((err) => console.log(err));
-		alert('Your Account Successfully Deleted....');
-		window.location.replace('/login');
+		alert("Your Account Successfully Deleted....");
+		window.location.replace("/login");
 	}
 
 	render() {
@@ -35,7 +34,7 @@ export default class PersonalDetails extends Component {
 					<h2>My Profile</h2>
 				</div>
 				<table className='table table-striped'>
-				<tr>
+					<tr>
 						<td style={{ fontWeight: "bold" }}>Name</td>
 						<td>{this.props.obj.name}</td>
 					</tr>
@@ -59,19 +58,19 @@ export default class PersonalDetails extends Component {
 						<td style={{ fontWeight: "bold" }}>Emp No</td>
 						{/* <td>{this.props.obj.phoneNu}</td> *
 					</tr> */}
-				
-					 <tr className='profile-actions'>
+
+					<tr className='profile-actions'>
 						<td>
-							<button className='btn'> 
-								 {/* <Link to={'/EditEmployee/' + this.props.obj._id}>Edit</Link> } */}
-							 </button> 
-						</td> 
-						 <td>
+							<button className='btn'>
+								{/* <Link to={'/EditEmployee/' + this.props.obj._id}>Edit</Link> } */}
+							</button>
+						</td>
+						<td>
 							<button className='btn' onClick={this.delete}>
 								Delete Account
 							</button>
-						</td> 
-					 </tr> 
+						</td>
+					</tr>
 				</table>
 				<button type='submit'>Monthly Work Report</button>
 			</div>

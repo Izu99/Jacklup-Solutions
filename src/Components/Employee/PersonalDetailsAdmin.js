@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import ellipse1 from "../images/ellipse1.svg";
-import polygon from "../images/Polygon.svg";
-import ellipse2 from "../images/ellipse2.svg";
-import ellipse3 from "../images/ellipse3.svg";
-import logo from "../images/logo.svg";
-import profile from "../images/profile-image.svg";
+import React, { Component } from "react";
+import ellipse1 from "../../images/ellipse1.svg";
+import polygon from "../../images/Polygon.svg";
+import ellipse2 from "../../images/ellipse2.svg";
+import ellipse3 from "../../images/ellipse3.svg";
+import logo from "../../images/logo.svg";
+import profile from "../../images/profile-image.svg";
 
-import '../Styles/PersonalDetailsAdmin.css';
+import "../../Styles/PersonalDetailsAdmin.css";
 
 export default class PersonalDetailsAdmin extends Component {
-  render() {
-    return (
-      <div className='adminProfile'>
+	render() {
+		return (
+			<div className='adminProfile'>
 				<div className='header'>
 					<img src={logo} alt='' />
 					<h2>My Profile</h2>
@@ -73,12 +73,16 @@ export default class PersonalDetailsAdmin extends Component {
 						</td> */}
 					{/* </tr> */}
 				</table>
-				<button type='submit' className='report'>Monthly Work Report</button>
-                <button type='submit' className='btn'>Edit Profile</button>
-                <button type='submit' className='btn'>Delete Profile</button>
+				<button type='submit' className='report'>
+					Monthly Work Report
+				</button>
+				<button type='submit' className='btn'>
+					Edit Profile
+				</button>
+				<button type='submit' className='btn'>
+					Delete Profile
+				</button>
 			</div>
-      
-
-    );
-  }
+		);
+	}
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "../Styles/PageNotFound.css";
+import "../../Styles/PageNotFound.css";
 
 export default class PageNotFound extends Component {
 	render() {

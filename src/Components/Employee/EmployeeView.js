@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import ellipse1 from "../images/ellipse1.svg";
-import polygon from "../images/Polygon.svg";
-import ellipse2 from "../images/ellipse2.svg";
-import ellipse3 from "../images/ellipse3.svg";
-import logo from "../images/logo.svg";
-import profileimage from "../images/profile-image2.svg";
+import ellipse1 from "../../images/ellipse1.svg";
+import polygon from "../../images/Polygon.svg";
+import ellipse2 from "../../images/ellipse2.svg";
+import ellipse3 from "../../images/ellipse3.svg";
+import logo from "../../images/logo.svg";
+import profileimage from "../../images/profile-image2.svg";
 
-import "../Styles/EmployeeView.css";
+import "../../Styles/EmployeeView.css";
 import axios from "axios";
 import EmployeeRow from "./EmployeeRow";
 
@@ -67,7 +67,9 @@ export default class EmployeeView extends Component {
 					<input type='text' placeholder='search...' />
 					<button type='submit'>Search</button>
 				</form>
-				<p className="add"><a href=""> + </a></p>
+				<p className='add'>
+					<a href=''> + </a>
+				</p>
 
 				<table class='table table-striped'>
 					{" "}

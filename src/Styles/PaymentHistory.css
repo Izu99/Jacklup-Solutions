@@ -1,0 +1,54 @@
+.paymentHistory {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.paymentHistory .history {
+	/* margin-left: 12rem; */
+	background-color: #c9b3e7;
+	height: 40rem;
+    width: 70rem;
+    margin-left: 8rem;
+    border-radius: 15px;
+}
+
+.paymentHistory h2 {
+    padding-top: 2rem;
+    margin-left: 6rem;
+}
+
+.paymentHistory table {
+	position: absolute;
+	margin-top: 5%;
+	width: 70%;
+	/* border-collapse: separate; */
+	/* border-spacing: 10px; */
+	margin-left: 12.5rem;
+	/* background-color: #000000; */
+	text-align: center;
+	background-color: #ffffff;
+}
+
+.paymentHistory table thead {
+	font-size: 1.2rem;
+	margin-bottom: 2rem;
+	/* background-color: #000000; */
+	height: 6rem;
+}
+
+.paymentHistory table tr {
+	height: 76%;
+	border-width: 15px;
+	margin-left: 12%;
+	text-align: center;
+	height: 3rem;
+}
+
+.paymentHistory table tr td {
+	text-align: center;
+}
+
+.paymentHistory .sidebar {
+    
+}
