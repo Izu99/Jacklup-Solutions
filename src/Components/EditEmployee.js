@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-import logo from "../../images/logo.svg";
-import profile from "../../images/profile-image3.svg";
-import img1 from "../../images/bottom-image.svg";
-import ellipse1 from "../../images/ellipse1.svg";
-import polygon from "../../images/Polygon.svg";
-import ellipse2 from "../../images/ellipse2.svg";
-import ellipse3 from "../../images/ellipse3.svg";
-import "../../Styles/EmployeeAdd.css";
+import logo from "../images/logo.svg";
+import profile from "../images/profile-image3.svg";
+import img1 from "../images/bottom-image.svg";
+import ellipse1 from "../images/ellipse1.svg";
+import polygon from "../images/Polygon.svg";
+import ellipse2 from "../images/ellipse2.svg";
+import ellipse3 from "../images/ellipse3.svg";
+import "../Styles/EmployeeAdd.css";
 
 export default class EmployeeAdd extends Component {
 	constructor(props) {
@@ -38,6 +38,32 @@ export default class EmployeeAdd extends Component {
 			status: "",
 		};
 	}
+
+
+    componentDidMount() {
+        // alert('edit id ' +this.props.match.params.id);
+        axios.get('http://localhost:4000/emplooyee/edit/'+this.props.match.params.id)
+            .then(res => {
+                this.setState({
+                    name: res.data.name,
+                    age: res.data.age,
+                    mobile: res.data.mobile,
+                    tel: res.data.tel,
+					email: res.data.email,
+					posision: res.data.posision,
+					adress: res.data.adress,
+					password: res.data.password,
+                    cpassword: res.data.cpassword,
+                    status: res.data.status,
+                   
+                });
+            })
+            .catch(function (error){
+                console.log("Can't Get Data");
+            })
+    }
+
+
 	onChangename(e) {
 		this.setState({
 			name: e.target.value,
@@ -105,12 +131,12 @@ export default class EmployeeAdd extends Component {
 			status: this.state.status,
 		};
 
-	
-	 if (this.state.password === this.state.cpassword) {
-	 	if (this.state.age > 17) {
-	 		if (this.state.mobile.length === 10) {
-	 			if (this.state.tel.length === 10) {
-		axios.post("http://localhost:4000/emplooyee/add", obj).then((res) => {
+		if (this.state.password === this.state.cpassword) {
+            if (this.state.age > 17) {
+                if (this.state.mobile.length === 10) {
+                    if (this.state.tel.length === 10) {
+            axios.post('http://localhost:4000/emplooyee/update/'+this.props.match.params.id,obj)
+            .then((res) => {
 			alert("add Successfully");
 			this.setState({
 				name: "",

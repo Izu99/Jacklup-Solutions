@@ -7,14 +7,14 @@ import {
 import React, { Component } from "react";
 
 import "./App.css";
-// import Login from "./Components/Employee/Login";
-import PageNotFound from "./Components/Employee/PageNotFound";
-import EmployeeAdd from "./Components/Employee/EmployeeAdd";
-import EmployeeView from "./Components/Employee/EmployeeView";
-import AvailableVacancies from "./Components/Employee/AvailableVacancies"
-import PersonalDetails from "./Components/Employee/PersonalDetails";
-import PersonalDetailsAdmin from './Components/Employee/PersonalDetailsAdmin'
-import PaymentHistory from "./Components/Payment/PaymentHistory";
+// import Login from "./Components/Login";
+import PageNotFound from "./Components/PageNotFound";
+import EmployeeAdd from "./Components/EmployeeAdd";
+import EmployeeView from "./Components/EmployeeView";
+import AvailableVacancies from "./Components/AvailableVacancies"
+import PersonalDetails from "./Components/PersonalDetails";
+import EditEmployee from "./Components/EditEmployee";
+import PersonalDetailsAdmin from './Components/PersonalDetailsAdmin'
 class App extends Component {
 	render() {
 		return (
@@ -26,6 +26,7 @@ class App extends Component {
 						<Route path='/employeeview' component={EmployeeView} />
 						<Route path='/availablevacancies' component={AvailableVacancies} />
 						<Route path='/employeeadd' component={EmployeeAdd} />
+						<Route path='/EditEmployee/:id' component={EditEmployee} />
 						<Route path='/personaldetails' component={PersonalDetails} />
 						<Route path='/adminprofile' component={PersonalDetailsAdmin} />
 						<Route path='/paymenthistory' component={PaymentHistory} />
