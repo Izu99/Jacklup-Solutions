@@ -72,7 +72,7 @@ export default class EmployeeView extends Component {
 				<table class='table table-striped'>
 					{" "}
 					<thead>
-						<th></th>
+						
 						<th>Name</th>
 						<th>Mobile</th>
 						<th>E-mail</th>
@@ -80,44 +80,8 @@ export default class EmployeeView extends Component {
 						<th>Status</th>
 						<th>Action</th>
 					</thead>
-					<tr className='users'>
-						<td className='user'>
-							<img
-								src='http://health5.ru/wp-content/uploads/2018/03/Rejuvenate-the-face.jpg'
-								alt=''
-							/>
-						</td>
-						<td>Name</td>
-						<td>20</td>
-						<td>
-							<a href=''>email123@gmail.com</a>{" "}
-						</td>
-						<td>Event Planner</td>
-						<td>Active</td>
-						<td className='actions'>
-							<i class='fa-solid fa-pen'></i>
-							<i class='fa-solid fa-exclamation'></i>
-						</td>
-					</tr>
-					<tr className='users'>
-						<td className='user'>
-							<img
-								src='http://health5.ru/wp-content/uploads/2018/03/Rejuvenate-the-face.jpg'
-								alt=''
-							/>
-						</td>
-						<td>Name</td>
-						<td>20</td>
-						<td>
-							<a href=''>email123@gmail.com</a>{" "}
-						</td>
-						<td>Event Planner</td>
-						<td>Active</td>
-						<td className='actions'>
-							<i class='fa-solid fa-pen'></i>
-							<i class='fa-solid fa-exclamation'></i>
-						</td>
-					</tr>
+					
+					<tbody>{this.tabRow()}</tbody>
 				</table>
 				<img src={polygon} alt='' className='polygon1' />
 				<img src={ellipse2} alt='' className='ellipse2' />

@@ -105,12 +105,11 @@ export default class EmployeeAdd extends Component {
 			status: this.state.status,
 		};
 
-		// if(this.state.cNumber.length > 4){
-
-		// if (this.state.password === this.state.cpassword) {
-		// 	if (this.state.age.length > 17) {
-		// 		if (this.state.mobile.length === 10) {
-		// 			if (this.state.tel.length === 10) {
+	
+	 if (this.state.password === this.state.cpassword) {
+	 	if (this.state.age.len > 17) {
+	 		if (this.state.mobile.length === 10) {
+	 			if (this.state.tel.length === 10) {
 		axios.post("http://localhost:4000/emplooyee/add", obj).then((res) => {
 			alert("add Successfully");
 			this.setState({
@@ -128,19 +127,19 @@ export default class EmployeeAdd extends Component {
 			console.log(res.data);
 		});
 		this.props.history.push("/");
-		// 				} else {
-		// 					alert("Invalid phone Number.. Pleace enter more than 10 digit.");
-		// 				}
-		// 			} else {
-		// 				alert("Invalid phone number.. Pleace enter more than 1o digits.");
-		// 			}
-		// 		} else {
-		// 			alert("your age shoud ne more than 18");
-		// 		}
-		// 	} else {
-		// 		alert("Mismatch password.. Pleace enter same password");
-		// 	}
-		// }
+		 				} else {
+		 					alert("Invalid phone Number.. Pleace enter more than 10 digit.");
+		 				}
+		 			} else {
+		 				alert("Invalid phone number.. Pleace enter more than 1o digits.");
+		 			}
+		 		} else {
+		 			alert("your age shoud ne more than 18");
+		 		}
+		 	} else {
+		 		alert("Mismatch password.. Pleace enter same password");
+		 	}
+		 
 	}
 
 	render() {

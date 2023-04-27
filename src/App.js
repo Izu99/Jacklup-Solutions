@@ -13,6 +13,7 @@ import EmployeeAdd from "./Components/EmployeeAdd";
 import EmployeeView from "./Components/EmployeeView";
 import AvailableVacancies from "./Components/AvailableVacancies"
 import PersonalDetails from "./Components/PersonalDetails";
+import EditEmployee from "./Components/EditEmployee";
 import PersonalDetailsAdmin from './Components/PersonalDetailsAdmin'
 class App extends Component {
 	render() {
@@ -25,6 +26,7 @@ class App extends Component {
 						<Route path='/employeeview' component={EmployeeView} />
 						<Route path='/availablevacancies' component={AvailableVacancies} />
 						<Route path='/employeeadd' component={EmployeeAdd} />
+						<Route path='/EditEmployee/:id' component={EditEmployee} />
 						<Route path='/personaldetails' component={PersonalDetails} />
 						<Route path='/adminprofile' component={PersonalDetailsAdmin} />
 
