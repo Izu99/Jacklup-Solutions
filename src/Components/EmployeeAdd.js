@@ -107,7 +107,7 @@ export default class EmployeeAdd extends Component {
 
 	
 	 if (this.state.password === this.state.cpassword) {
-	 	if (this.state.age.len > 17) {
+	 	if (this.state.age > 17) {
 	 		if (this.state.mobile.length === 10) {
 	 			if (this.state.tel.length === 10) {
 		axios.post("http://localhost:4000/emplooyee/add", obj).then((res) => {

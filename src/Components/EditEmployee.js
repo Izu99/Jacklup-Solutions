@@ -38,6 +38,32 @@ export default class EmployeeAdd extends Component {
 			status: "",
 		};
 	}
+
+
+    componentDidMount() {
+        // alert('edit id ' +this.props.match.params.id);
+        axios.get('http://localhost:4000/emplooyee/edit/'+this.props.match.params.id)
+            .then(res => {
+                this.setState({
+                    name: res.data.name,
+                    age: res.data.age,
+                    mobile: res.data.mobile,
+                    tel: res.data.tel,
+					email: res.data.email,
+					posision: res.data.posision,
+					adress: res.data.adress,
+					password: res.data.password,
+                    cpassword: res.data.cpassword,
+                    status: res.data.status,
+                   
+                });
+            })
+            .catch(function (error){
+                console.log("Can't Get Data");
+            })
+    }
+
+
 	onChangename(e) {
 		this.setState({
 			name: e.target.value,
@@ -105,13 +131,12 @@ export default class EmployeeAdd extends Component {
 			status: this.state.status,
 		};
 
-		// if(this.state.cNumber.length > 4){
-
-		// if (this.state.password === this.state.cpassword) {
-		// 	if (this.state.age.length > 17) {
-		// 		if (this.state.mobile.length === 10) {
-		// 			if (this.state.tel.length === 10) {
-		axios.post("http://localhost:4000/emplooyee/add", obj).then((res) => {
+		if (this.state.password === this.state.cpassword) {
+            if (this.state.age > 17) {
+                if (this.state.mobile.length === 10) {
+                    if (this.state.tel.length === 10) {
+            axios.post('http://localhost:4000/emplooyee/update/'+this.props.match.params.id,obj)
+            .then((res) => {
 			alert("add Successfully");
 			this.setState({
 				name: "",
@@ -128,19 +153,19 @@ export default class EmployeeAdd extends Component {
 			console.log(res.data);
 		});
 		this.props.history.push("/");
-		// 				} else {
-		// 					alert("Invalid phone Number.. Pleace enter more than 10 digit.");
-		// 				}
-		// 			} else {
-		// 				alert("Invalid phone number.. Pleace enter more than 1o digits.");
-		// 			}
-		// 		} else {
-		// 			alert("your age shoud ne more than 18");
-		// 		}
-		// 	} else {
-		// 		alert("Mismatch password.. Pleace enter same password");
-		// 	}
-		// }
+		 				} else {
+		 					alert("Invalid phone Number.. Pleace enter more than 10 digit.");
+		 				}
+		 			} else {
+		 				alert("Invalid phone number.. Pleace enter more than 1o digits.");
+		 			}
+		 		} else {
+		 			alert("your age shoud ne more than 18");
+		 		}
+		 	} else {
+		 		alert("Mismatch password.. Pleace enter same password");
+		 	}
+		 
 	}
 
 	render() {
