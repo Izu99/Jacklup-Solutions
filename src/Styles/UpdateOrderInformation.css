@@ -1,0 +1,16 @@
+.UpdateOrderInformation {
+
+    /* display: block; */
+}
+
+.UpdateOrderInformation form {
+    margin-left: 12rem;
+    margin-top: 12rem;
+}
+.UpdateOrderInformation form label {
+    margin-top: 2rem;
+}
+.UpdateOrderInformation form input,textarea {
+    position: absolute;
+    left: 25rem;
+}

@@ -17,7 +17,9 @@ import EditEmployee from "./Components/Employee/EditEmployee";
 import PersonalDetailsAdmin from './Components/Employee/PersonalDetailsAdmin'
 import PaymentHistory from "./Components/Payment/PaymentHistory";
 import Login from "./Components/Login";
-
+import OrderAll from "./Components/Order/OrderAll";
+import UpdateOrderInformation from "./Components/Order/UpdateOrderInformation";
+import OrderInformation from "./Components/Order/OrderInformation";
 class App extends Component {
 	render() {
 		return (
@@ -33,7 +35,10 @@ class App extends Component {
 						<Route path='/adminprofile' component={PersonalDetailsAdmin} />
 						<Route path='/paymenthistory' component={PaymentHistory} />
 						<Route path='/login'  component={Login} />
-
+						{/* <Route path='/' component={Login} /> */}
+						<Route path='/orderall/:id' component={OrderAll} />
+						<Route path='/updateorderinformation/:id' component={UpdateOrderInformation} />
+						<Route path='/orderinformation/:id' component={OrderInformation} />
 						{/* <Redirect path to='/404' Component={PageNotFound}/> */}
 					</Switch>
 				</Router>

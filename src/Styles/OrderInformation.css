@@ -1,0 +1,30 @@
+.OrderInformation {
+
+    /* display: block; */
+}
+
+.OrderInformation form {
+    margin-left: 12rem;
+    margin-top: 12rem;
+}
+.OrderInformation form label {
+    margin-top: 2rem;
+}
+.OrderInformation form input,textarea {
+    position: absolute;
+    left: 25rem;
+}
+
+.OrderInformation  button {
+    position: absolute;
+    display: block;
+    top: 35rem;
+    left: 50rem;
+}
+
+.OrderInformation .form2 {
+    position: absolute;
+    top: 5rem;
+    left: 50rem;
+    margin-left: 15rem;
+}
