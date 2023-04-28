@@ -40,7 +40,7 @@ export default class PaymentHistory extends Component {
           </table>
           <div className="sidebar">
             <button>payment history</button><br />
-            <button>btn2</button>
+            <button>Payment Method </button>
           </div>
 				</div>
 			</div>
