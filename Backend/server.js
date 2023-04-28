@@ -9,6 +9,7 @@ const config = require('./DB.js');
 
 // const studentRoutes = require('./student.route');
 const emplooyeeRoutes = require('./emplooyee.route.js');
+const emplooyeedetailRoutes = require('./employe.detail.route.js');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, {useNewUrlParser: true}).then(
@@ -21,6 +22,7 @@ app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
 
 app.use('/emplooyee',emplooyeeRoutes);
+app.use('/profile',emplooyeedetailRoutes);
 
 
 app.listen(PORT, function(){

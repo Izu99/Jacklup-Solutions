@@ -39,17 +39,17 @@ export default  class Login extends  Component{
 		};
 	
 		if ((this.state.email === "admin@gmail.com") && (this.state.password === "admin123")) {
-		   //  const Station = "Hotel";
-			 this.props.history.push('/dashboard/'+Email);
+		  
+			 this.props.history.push('/employeeadd/'+Email);
 	
 		}
 		else  {
-			axios.post('http://localhost:4000/farmer/login',object)
+			axios.post('http://localhost:4000/emplooyee/login',object)
 				.then(res => {
 					if(res.data.message === "Successful Login"){
 						// alert(res.data.message)
 						// alert(Email)
-						this.props.history.push('/AddFarmer/'+Email);
+						this.props.history.push('/personaldetails/'+Email);
 					  // this.props.history.push('/');
 					}
 					else{
@@ -59,60 +59,12 @@ export default  class Login extends  Component{
 	
 				});
 
-				axios.post('http://localhost:4000/vender/login',object)
-				.then(res => {
-					if(res.data.message === "Successful Login"){
-						// alert(res.data.message)
-						// alert(Email)
-						this.props.history.push('/Login/'+Email);
-					  // this.props.history.push('/');
-					}
-					else{
-						// alert(res.data.message)
-						this.props.history.push('/login');
-					}
-	
-				});
-
-
-				axios.post('http://localhost:4000/client/login',object)
-				.then(res => {
-					if(res.data.message === "Successful Login"){
-						// alert(res.data.message)
-						// alert(Email)
-						this.props.history.push('/Login/'+Email);
-					  // this.props.history.push('/');
-					}
-					else{
-						// alert(res.data.message)
-						this.props.history.push('/login');
-					}
-	
-				});
-
-				axios.post('http://localhost:4000/product/login',object)
-				.then(res => {
-					if(res.data.message === "Successful Login"){
-						// alert(res.data.message)
-						// alert(Email)
-						this.props.history.push('/Login/'+Email);
-					  // this.props.history.push('/');
-					}
-					else{
-						// alert(res.data.message)
-						this.props.history.push('/login');
-					}
-	
-				});
-
+			
 
 		}
 
-	
-		
-		
-	
 	}
+		
 	
 	  render() {
 

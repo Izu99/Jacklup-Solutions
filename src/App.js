@@ -29,7 +29,7 @@ class App extends Component {
 						<Route path='/availablevacancies' component={AvailableVacancies} />
 						<Route path='/employeeadd' component={EmployeeAdd} />
 						<Route path='/EditEmployee/:id' component={EditEmployee} />
-						<Route path='/personaldetails' component={PersonalDetails} />
+						<Route path='/personaldetails/:id' component={PersonalDetails} />
 						<Route path='/adminprofile' component={PersonalDetailsAdmin} />
 						<Route path='/paymenthistory' component={PaymentHistory} />
 						<Route path='/login'  component={Login} />

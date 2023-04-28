@@ -1,10 +1,16 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-
+// import PersonalTableThrow from "./PersonalTableThrow";
+import { Link } from "react-router-dom";
 import "../../Styles/PersonalDetails.css";
+import logo from "../../images/logo.svg";
+import profile from "../../images/profile-image.svg";
+import ellipse1 from "../../images/ellipse1.svg";
+import polygon from "../../images/Polygon.svg";
+import ellipse2 from "../../images/ellipse2.svg";
+import ellipse3 from "../../images/ellipse3.svg";
 
-export default class PersonalTableThrow extends Component {
+export default class PersonalDetails extends Component {
 	constructor(props) {
 		super(props);
 
@@ -22,52 +28,41 @@ export default class PersonalTableThrow extends Component {
 
 	render() {
 		return (
-			<div className='pro-details'>
+			<div className='PersonalDetails'>
+				{/* <div className='header'>
+					<img src={logo} alt='' />
+					<h2>My Profile</h2>
+				</div> */}
 				<table className='table table-striped'>
 					<tr>
-						<td style={{ fontWeight: "bold" }}> name</td>
+						<td style={{ fontWeight: "bold" }}>Name</td>
 						<td>{this.props.obj.name}</td>
 					</tr>
 					<tr>
-						<td style={{ fontWeight: "bold" }}>age</td>
-						<td>{this.props.obj.age}</td>
-					</tr>
-					<tr>
-						<td style={{ fontWeight: "bold" }}>mobile</td>
-						<td>{this.props.obj.mobile}</td>
-					</tr>
-					<tr>
-						<td style={{ fontWeight: "bold" }}>tel</td>
-						<td>{this.props.obj.tel}</td>
-					</tr>
-					<tr>
-						<td style={{ fontWeight: "bold" }}>email</td>
+						<td style={{ fontWeight: "bold" }}>Email</td>
 						<td>{this.props.obj.email}</td>
 					</tr>
 					<tr>
-						<td style={{ fontWeight: "bold" }}>Nic</td>
+						<td style={{ fontWeight: "bold" }}>Mobile</td>
+						<td>{this.props.obj.mobile}</td>
+					</tr>
+					<tr>
+						<td style={{ fontWeight: "bold" }}>Address</td>
 						<td>{this.props.obj.adress}</td>
 					</tr>
 					<tr>
-						<td style={{ fontWeight: "bold" }}>password</td>
-						<td>{this.props.obj.password}</td>
+						<td style={{ fontWeight: "bold" }}>Age</td>
+						<td>{this.props.obj.age}</td>
 					</tr>
-					<tr>
-						<td style={{ fontWeight: "bold" }}>cpassword</td>
-						<td>{this.props.obj.cpassword}</td>
-					</tr>
-					<tr>
-						<td style={{ fontWeight: "bold" }}>country</td>
-						<td>{this.props.obj.country}</td>
-					</tr>
-					<tr>
-						<td style={{ fontWeight: "bold" }}>password</td>
-						<td>{this.props.obj.password}</td>
-					</tr>
+					{/* <tr>
+						<td style={{ fontWeight: "bold" }}>Emp No</td>
+						{/* <td>{this.props.obj.phoneNu}</td> *
+					</tr> */}
+
 					<tr className='profile-actions'>
 						<td>
 							<button className='btn'>
-								{/* <Link to={'/Editregister/' + this.props.obj._id}>Edit</Link> */}
+								{/* <Link to={'/EditEmployee/' + this.props.obj._id}>Edit</Link> } */}
 							</button>
 						</td>
 						<td>
@@ -77,6 +72,7 @@ export default class PersonalTableThrow extends Component {
 						</td>
 					</tr>
 				</table>
+				<button type='submit'>Monthly Work Report</button>
 			</div>
 		);
 	}

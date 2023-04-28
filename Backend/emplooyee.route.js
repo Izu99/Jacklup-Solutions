@@ -64,6 +64,7 @@ empleeyeeRoutes.route('/update/:id').post(function (req,res){
     });
 });
 
+
 empleeyeeRoutes.route('/delete/:id').get(function(req,res){
     Empleeyee.findByIdAndRemove({_id:req.params.id}, function (err, customers){
         if(err)res.json(err);
@@ -86,6 +87,32 @@ empleeyeeRoutes.route('/getall').get(function(req, res) {
         }
     });
 });
+
+
+
+empleeyeeRoutes.route('/login').post(function (req, res){
+    let email = req.body.email;
+    let password = req.body.password;
+
+    let empleeyee = new Empleeyee(req.body);
+
+    Empleeyee.findOne({$and:[{email : email},{password : password}]})
+        .then(empleeyee => {
+            if(empleeyee){
+                empleeyee.name = req.body.name;
+                res.status(200).send({
+                    message: "Successful Login"
+                });
+            }
+            else{
+                res.status(200).send({
+                    message: "User Not Found"
+                });
+            }
+        })
+});
+
+
 
 
 module.exports = empleeyeeRoutes;
