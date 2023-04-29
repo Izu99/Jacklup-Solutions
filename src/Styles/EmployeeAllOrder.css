@@ -1,0 +1,13 @@
+.EmployeeAllOrder {
+    background-color: black;
+}
+
+.EmployeeAllOrder table {
+    margin-left: 12rem;
+    margin-top: 12rem;
+    width: 100%;
+}
+
+.EmployeeAllOrder table th {
+    border-collapse: separate;
+}

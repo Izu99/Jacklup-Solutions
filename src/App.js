@@ -21,7 +21,8 @@ import OrderAll from "./Components/Order/OrderAll";
 import UpdateOrderInformation from "./Components/Order/UpdateOrderInformation";
 import OrderInformation from "./Components/Order/OrderInformation";
 import PaymentInformation from "./Components/Payment/PaymentInformation";
-
+import CardAdd from "./Components/CardAdd";
+import EmployeeAllOrder from "./Components/Order/EmployeeAllOrder";
 class App extends Component {
 	render() {
 		return (
@@ -39,15 +40,14 @@ class App extends Component {
 						<Route path='/login' component={Login} />
 						{/* <Route path='/' component={Login} /> */}
 						<Route path='/orderall/:id' component={OrderAll} />
-						<Route
-							path='/updateorderinformation/:id'
-							component={UpdateOrderInformation}
-						/>
+						<Route path='/updateorderinformation/:id' component={UpdateOrderInformation} />
 						<Route path='/orderinformation/:id' component={OrderInformation} />
 						<Route path='/paymentinformation' component={PaymentInformation} />
 						<Route path='/orderall' component={OrderAll} />
 						<Route path='/updateorderinformation/:id' component={UpdateOrderInformation} />
 						<Route path='/orderinformation' component={OrderInformation} />
+						<Route path='/cardadd' component={CardAdd} />
+						<Route path='/employeeallorder' component={EmployeeAllOrder} />
 						{/* <Redirect path to='/404' Component={PageNotFound}/> */}
 					</Switch>
 				</Router>
