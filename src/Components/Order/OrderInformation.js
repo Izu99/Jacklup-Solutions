@@ -13,6 +13,8 @@ export default class OrderInformation extends Component {
 		this.onChangedescription = this.onChangedescription.bind(this);
 		this.onChangedescription = this.onChangedescription.bind(this);
 		this.onChangedate = this.onChangedate.bind(this);
+		this.onChangejtype = this.onChangejtype.bind(this);
+		this.onChangeprice = this.onChangeprice.bind(this);
 		
 		this.onSubmit = this.onSubmit.bind(this);
 
@@ -23,6 +25,8 @@ export default class OrderInformation extends Component {
 			mobile: "",
 			description: "",
 			date: "",
+			jtype: "",
+			price: "",
 
 			
 		};
@@ -55,11 +59,39 @@ export default class OrderInformation extends Component {
 			date: e.target.value,
 		});
 	}
+
+	onChangejtype(e) {
+		this.setState({
+			jtype: e.target.value,
+
+			
+		});
+	}
+	onChangeprice(e) {
+		this.setState({
+			price: e.target.value,
+
+			
+		});
+	}
 	
 
 
 
 	onSubmit(e) {
+
+
+		// if (this.state.jtype == "DevOps") {
+		// 	this.state.price = 1000;
+		// } else if (this.state.jtype == "FrontEnd") {
+		// 	this.state.price = 1000;
+		// } else if (this.state.jtype == "Backend") {
+		// 	this.state.price =  1500;
+		// }
+		// else if (this.state.jtype == "Qa") {
+		// 	this.state.price =  1500;
+		// }
+
 		e.preventDefault();
 		const obj = {
 			name: this.state.name,
@@ -67,11 +99,13 @@ export default class OrderInformation extends Component {
 			oderNo: this.state.oderNo,
 			mobile: this.state.mobile,
 			description: this.state.description,
-			date: this.state.date
+			date: this.state.date,
+			price: this.state.price,
+			jtype: this.state.jtype,
 			
 		};
 
-		alert("Your oderNo is - " +this.state.oderNo);
+		alert("Your price is - " +this.state.price);
 	 		if (this.state.mobile.length === 10) {
 	 			if (this.state.description.length > 5) {
 		axios.post("http://localhost:4000/oder/add", obj).then((res) => {
@@ -82,6 +116,9 @@ export default class OrderInformation extends Component {
 			mobile: "",
 			description: "",
 			date: "",
+			price: "",
+			jtype: "",
+
 			
 			});
 			console.log(res.data);
@@ -117,7 +154,25 @@ export default class OrderInformation extends Component {
 									onChange={this.onChangeemail}/>
 					<br />
 					<br />
+
+					<div className='detail'>
+							<label htmlFor=''> Job</label>
+							<select
+								required
+								value={this.state.jtype}
+								onChange={this.onChangejtype}
+								className='form-control'>
+								<option>Choose Type</option>
+								<option value='DevOps'>DevOps</option>
+								<option value='FrontEnd'>FrontEnd</option>
+								<option value='Backend'>Backend</option>
+								<option value='Qa'>Qa</option>
+							</select>
+						</div>
 			
+						<br />
+					<br />
+
 					<label htmlFor=''>Phone Number</label>
 					<input type='number' required
 									value={this.state.mobile}
@@ -137,12 +192,24 @@ export default class OrderInformation extends Component {
 									onChange={this.onChangedate}/>
 								<br />
 					<br /> 	
+
+					<label htmlFor=''>Price</label>
+					<input name='' id='' cols='30' rows='10'
+							value={this.state.price}
+							onChange={this.onChangeprice}
+								/>
+									<br />
+					<br />
+
 					<label htmlFor=''>Description</label>
 					<textarea name='' id='' cols='30' rows='10'required
 									value={this.state.description}
 									onChange={this.onChangedescription}/>
 									<br />
 					<br />
+
+				
+				
 				
           <button type='submit'>Submit</button>
 				{/* </form> */}
