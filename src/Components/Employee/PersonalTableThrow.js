@@ -28,12 +28,12 @@ export default class PersonalDetails extends Component {
 
 	render() {
 		return (
-			<div className='PersonalDetails'>
+			<div className='PersonalDetailstable'>
 				{/* <div className='header'>
 					<img src={logo} alt='' />
 					<h2>My Profile</h2>
 				</div> */}
-				<table className='table table-striped'>
+				<table className='tale table-striped'>
 					<tr>
 						<td style={{ fontWeight: "bold" }}>Name</td>
 						<td>{this.props.obj.name}</td>
@@ -59,20 +59,20 @@ export default class PersonalDetails extends Component {
 						{/* <td>{this.props.obj.phoneNu}</td> *
 					</tr> */}
 
-					<tr className='profile-actions'>
+					<tr className='proile-actions'>
 						<td>
-							<button className='btn'>
-								{/* <Link to={'/EditEmployee/' + this.props.obj._id}>Edit</Link> } */}
-							</button>
+							{/* <button className='btn'>
+								<Link to={'/EditEmployee/' + this.props.obj._id}>Edit</Link> }
+							</button> */}
 						</td>
 						<td>
-							<button className='btn' onClick={this.delete}>
+							{/* <button className='btn' onClick={this.delete}>
 								Delete Account
-							</button>
+							</button> */}
 						</td>
 					</tr>
 				</table>
-				<button type='submit'>Monthly Work Report</button>
+				<button type='subit'>Monthly Work Report</button>
 			</div>
 		);
 	}

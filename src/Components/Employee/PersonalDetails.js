@@ -71,28 +71,8 @@ export default class PersonalDetails extends Component {
 						<td style={{ fontWeight: "bold" }}>Joined Date</td>
 						{/* <td>{this.props.obj.nic}</td> */}
 					</tr>
-					{/* <tr className='profile-actions'>
-						<td>
-							<button className='btn'> */}
-					{/* <Link to={'/Editregister/' + this.props.obj._id}>Edit</Link> */}
-					{/* </button> */}
-					{/* </td> */}
-					{/* <td>
-							<button className='btn' onClick={this.delete}>
-								Delete Account
-							</button>
-						</td> */}
-					{/* </tr> */}
-				</table>
-				<button type='submit' className='report'>
-					Monthly Work Report
-				</button>
-				{/* <button type='submit' className='btn'>
-					Edit Profile
-				</button>
-				<button type='submit' className='btn'>
-					Delete Profile
-				</button> */}
+					</table>		
+				
 			</div>
 		);
 	}
