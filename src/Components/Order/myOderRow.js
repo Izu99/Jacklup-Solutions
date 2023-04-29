@@ -6,7 +6,7 @@ import axios from "axios";
 class TableRow extends Component {
     constructor(props) {
         super(props);
-        this.delete = this.delete.bind(this);
+        // this.delete = this.delete.bind(this);
     }
     // delete(){
     //     axios.get('http://localhost:4000/oder/delete/'+this.props.obj._id)

@@ -31,7 +31,7 @@ export default class OrderInformation extends Component {
 
     componentDidMount() {
         
-        axios.get('http://localhost:4000/oder/edit/'+this.props.match.params.id)
+        axios.get('http://localhost:4000/myOder/edit/'+this.props.match.params.id)
             .then(res => {
                 this.setState({
                     oderNo: res.data.oderNo,
@@ -181,7 +181,7 @@ export default class OrderInformation extends Component {
 									<br />
 					<br />
 				
-          <button type='submit'>Accept Oder</button>
+          <button type='submit'>Sumbit Oder</button> 
 				{/* </form> */}
 				</form>
 

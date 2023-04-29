@@ -54,7 +54,7 @@ class App extends Component {
 
 						<Route path='/myOdersView' component={myOdersView} />
 						<Route path='/submitOder/:id' component={submitOder} />
-						<Route path='/myOders' component={myOders} />
+						<Route path='/myOders/:id' component={myOders} />
 						{/* <Redirect path to='/404' Component={PageNotFound}/> */}
 					</Switch>
 				</Router>
