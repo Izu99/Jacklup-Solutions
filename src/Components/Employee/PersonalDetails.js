@@ -54,24 +54,7 @@ export default class PersonalDetails extends Component {
 					<h2>Personal Details</h2>
 				</div>
 
-				<table className='table1 table-striped'>
-					<tr>
-						<td style={{ fontWeight: "bold" }}>Email</td>
-						{/* <td>{this.props.obj.firstName}</td> */}
-					</tr>
-					<tr>
-						<td style={{ fontWeight: "bold" }}>Mobile</td>
-						{/* <td>{this.props.obj.lastName}</td> */}
-					</tr>
-					<tr>
-						<td style={{ fontWeight: "bold" }}>Address</td>
-						{/* <td>{this.props.obj.email}</td> */}
-					</tr>
-					<tr>
-						<td style={{ fontWeight: "bold" }}>Age</td>
-						{/* <td>{this.props.obj.countryCode}</td> */}
-					</tr>{" "}
-				</table>
+				{this.tabRow()}
 				<img src={polygon} alt='' className='polygon1' />
 
 				<div className='title2'>
