@@ -56,6 +56,7 @@ export default class PaymentInformation extends Component {
 						Bank Deposit
 					</label>
 					<div className='switch'>
+            {/* Credit Card details retrieve from the table */}
 						{this.state.selectedSwitch === "switch1" && (
 							<div className='switch2'>
 								<table>
@@ -74,6 +75,8 @@ export default class PaymentInformation extends Component {
 								</table>
 							</div>
 						)}
+
+            {/* Company Bank Details */}
 						{this.state.selectedSwitch === "switch2" && (
 							<div className='switch1'>
 								<p>Bank Information</p>
