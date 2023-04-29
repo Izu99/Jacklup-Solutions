@@ -1,0 +1,30 @@
+.PaymentInformation {
+
+    /* display: block; */
+}
+
+.PaymentInformation form {
+    margin-left: 12rem;
+    margin-top: 12rem;
+}
+/* .PaymentInformation form label {
+    margin-top: 2rem;
+} */
+/* .PaymentInformation form input,textarea {
+    position: absolute;
+    left: 25rem;
+} */
+
+.PaymentInformation  button {
+    position: absolute;
+    display: block;
+    top: 35rem;
+    left: 50rem;
+}
+
+.PaymentInformation .form2 {
+    position: absolute;
+    top: 5rem;
+    left: 50rem;
+    margin-left: 15rem;
+}

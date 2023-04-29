@@ -108,13 +108,14 @@
 	position: absolute;
 	left: 40rem;
 	top: 38rem;
-	background-color: #bcb9ff;
+	background-color: #3e1b6b;
 	width: 22rem;
 	height: 3rem;
 	border: none;
 	border-radius: 30px;
 	font-weight: 550;
 	font-size: 1rem;
+	color: #ffffff;
 }
 
 .PersonalDetails .about {
