@@ -13,6 +13,7 @@ const emplooyeedetailRoutes = require('./employe.detail.route.js');
 const oderRoutes = require('./oder.route.js');
 const bankRoutes = require('./bank.routes.js');
 const myOderRoutes = require('./myOder.route.js');
+const paymentRoutes = require('./payment.route.js');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, {useNewUrlParser: true}).then(
@@ -29,6 +30,7 @@ app.use('/profile',emplooyeedetailRoutes);
 app.use('/oder',oderRoutes);
 app.use('/bank',bankRoutes);
 app.use('/myOder',myOderRoutes);
+app.use('/pay',paymentRoutes);
 
 
 app.listen(PORT, function(){

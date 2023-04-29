@@ -24,6 +24,8 @@ import PaymentInformation from "./Components/Payment/PaymentInformation";
 import CardAdd from "./Components/CardAdd";
 
 import myOdersView from "./Components/Order/myOdersView";
+
+import clientoderView from "./Components/Payment/clientoderView";
 import submitOder from "./Components/Order/submitOder";
 import myOders from "./Components/Order/myOders";
 class App extends Component {
@@ -46,12 +48,13 @@ class App extends Component {
 
 						<Route path='/updateorderinformation/:id' component={UpdateOrderInformation} />
 						<Route path='/orderinformation/:id' component={OrderInformation} />
-						<Route path='/paymentinformation' component={PaymentInformation} />
+						<Route path='/paymentinformation/:id' component={PaymentInformation} />
 						<Route path='/orderall' component={OrderAll} />
 						<Route path='/updateorderinformation/:id' component={UpdateOrderInformation} />
 						<Route path='/orderinformation' component={OrderInformation} />
 						<Route path='/cardadd' component={CardAdd} />
 
+						<Route path='/clientoderView' component={clientoderView} />
 						<Route path='/myOdersView' component={myOdersView} />
 						<Route path='/submitOder/:id' component={submitOder} />
 						<Route path='/myOders/:id' component={myOders} />
