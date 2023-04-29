@@ -1,5 +1,5 @@
 .EmployeeAllOrder {
-    background-color: black;
+    /* background-color: black; */
 }
 
 .EmployeeAllOrder table {
@@ -10,4 +10,5 @@
 
 .EmployeeAllOrder table th {
     border-collapse: separate;
+    border: 1px solid #000000;
 }

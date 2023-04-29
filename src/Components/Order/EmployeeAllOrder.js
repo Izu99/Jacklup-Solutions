@@ -12,12 +12,12 @@ export default class EmployeeAllOrder extends Component {
 						<thead>
 							<th>Description</th>
 							<th>
-                <button>Take Order</button>
-                <button>Complete</button>
-              </th>
+								<button>Take Order</button>
+								<button>Complete</button>
+							</th>
 						</thead>
 
-						<tbody>{this.tabRow()}</tbody>
+						{/* <tbody>{this.tabRow()}</tbody> */}
 					</table>
 					{/* <div className='sidebar'>
 						<button>Order history</button>
