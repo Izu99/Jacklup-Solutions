@@ -1,8 +1,45 @@
 import React, { Component } from "react";
-
+import axios from "axios";
 import "../../Styles/OrderAll.css";
-
+import TableRow from "./oderRow";
 export default class OrderAll extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = { oder: [], search: "" };
+		this.state.Station = this.props.match.params.id;
+
+		this.onChangeSearch = this.onChangeSearch.bind(this);
+	}
+
+	onChangeSearch(e) {
+		this.setState({
+			search: e.target.value,
+		});
+	}
+
+	componentDidMount() {
+		// alert('email is ' +this.props.match.params.id);
+		axios
+			.get("http://localhost:4000/oder/getall/")
+			.then((response) => {
+				// alert('Pass una')
+				// alert('Data Tika :'+response.data)
+				this.setState({ oder: response.data });
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
+
+	tabRow() {
+		return this.state.oder.map(function (object, i) {
+			return <TableRow obj={object} key={i} />;
+		});
+		// return <OrderTableRow obj={this.state.orders}/>
+	}
+
+
 	render() {
 		return (
 			<div className='OrderAll'>
@@ -15,28 +52,8 @@ export default class OrderAll extends Component {
 							<th>Order Date</th>
 							<th>Progress</th>
 						</thead>
-						<tr>
-							<td>INV-002</td>
-							<td>Full Payment</td>
-							<td>date</td>
-							<td><progress id="file" max="100" value="60"> 60% </progress></td>
-							<td>
-								<i>
-									<i class='fa-solid fa-ellipsis-vertical'></i>
-								</i>
-							</td>
-						</tr>
-						<tr>
-							<td>INV - 001</td>
-							<td>Ongoing</td>
-							<td>date</td>
-							<td><progress id="file" max="100" value="70"> 70% </progress></td>
-							<td>
-								<i>
-									<i class='fa-solid fa-ellipsis-vertical'></i>
-								</i>
-							</td>
-						</tr>
+					
+						<tbody>{this.tabRow()}</tbody>
 					</table>
 					<div className='sidebar'>
 						<button>Order history</button>

@@ -45,6 +45,9 @@ class App extends Component {
 						/>
 						<Route path='/orderinformation/:id' component={OrderInformation} />
 						<Route path='/paymentonformation' component={PaymentInformation} />
+						<Route path='/orderall' component={OrderAll} />
+						<Route path='/updateorderinformation/:id' component={UpdateOrderInformation} />
+						<Route path='/orderinformation' component={OrderInformation} />
 						{/* <Redirect path to='/404' Component={PageNotFound}/> */}
 					</Switch>
 				</Router>
