@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "../../Styles/OrderAll.css";
-import TableRow from "./oderRow";
+import TableRow from "./myOderRow";
 export default class OrderAll extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = { oder: [], search: "" };
+		this.state = { myoder: [], search: "" };
 		this.state.Station = this.props.match.params.id;
 
 		this.onChangeSearch = this.onChangeSearch.bind(this);
@@ -21,11 +21,11 @@ export default class OrderAll extends Component {
 	componentDidMount() {
 		// alert('email is ' +this.props.match.params.id);
 		axios
-			.get("http://localhost:4000/oder/getall/")
+			.get("http://localhost:4000/myOder/getall/")
 			.then((response) => {
 				// alert('Pass una')
 				// alert('Data Tika :'+response.data)
-				this.setState({ oder: response.data });
+				this.setState({ myoder: response.data });
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -33,7 +33,7 @@ export default class OrderAll extends Component {
 	}
 
 	tabRow() {
-		return this.state.oder.map(function (object, i) {
+		return this.state.myoder.map(function (object, i) {
 			return <TableRow obj={object} key={i} />;
 		});
 		// return <OrderTableRow obj={this.state.orders}/>
@@ -48,6 +48,7 @@ export default class OrderAll extends Component {
 					<table>
 						<thead>
 							<th>Invoice</th>
+                            <th>Status</th>
 							<th>Order Date</th>
 						
 						</thead>

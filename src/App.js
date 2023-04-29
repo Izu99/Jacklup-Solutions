@@ -22,7 +22,10 @@ import UpdateOrderInformation from "./Components/Order/UpdateOrderInformation";
 import OrderInformation from "./Components/Order/OrderInformation";
 import PaymentInformation from "./Components/Payment/PaymentInformation";
 import CardAdd from "./Components/CardAdd";
-import EmployeeAllOrder from "./Components/Order/EmployeeAllOrder";
+
+import myOdersView from "./Components/Order/myOdersView";
+import submitOder from "./Components/Order/submitOder";
+import myOders from "./Components/Order/myOders";
 class App extends Component {
 	render() {
 		return (
@@ -39,7 +42,8 @@ class App extends Component {
 						<Route path='/paymenthistory' component={PaymentHistory} />
 						<Route path='/login' component={Login} />
 						{/* <Route path='/' component={Login} /> */}
-						<Route path='/orderall/:id' component={OrderAll} />
+						<Route path='/orderall' component={OrderAll} />
+
 						<Route path='/updateorderinformation/:id' component={UpdateOrderInformation} />
 						<Route path='/orderinformation/:id' component={OrderInformation} />
 						<Route path='/paymentinformation' component={PaymentInformation} />
@@ -47,7 +51,10 @@ class App extends Component {
 						<Route path='/updateorderinformation/:id' component={UpdateOrderInformation} />
 						<Route path='/orderinformation' component={OrderInformation} />
 						<Route path='/cardadd' component={CardAdd} />
-						<Route path='/employeeallorder' component={EmployeeAllOrder} />
+
+						<Route path='/myOdersView' component={myOdersView} />
+						<Route path='/submitOder/:id' component={submitOder} />
+						<Route path='/myOders' component={myOders} />
 						{/* <Redirect path to='/404' Component={PageNotFound}/> */}
 					</Switch>
 				</Router>

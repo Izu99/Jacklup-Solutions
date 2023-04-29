@@ -15,18 +15,7 @@ oderRoutes.route('/add').post(function (req,res){
         });
 });
 
-// oderRoutes.route('/:id').get(function (req, res){
-//     let pCode = req.params.id;
-//     console.log("your product code id is " +pCode);
-//     oder.findOne({$and:[{pCode : pCode}]},function (err,std){
-//         if(err)
-//             console.log(err);
-//         else{
-//             res.json(std)
-//         }
-//     });
 
-// });
 
 oderRoutes.route('/edit/:id').get(function (req,res){
     let id = req.params.id;
