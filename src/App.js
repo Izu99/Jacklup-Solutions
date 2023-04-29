@@ -44,7 +44,7 @@ class App extends Component {
 							component={UpdateOrderInformation}
 						/>
 						<Route path='/orderinformation/:id' component={OrderInformation} />
-						<Route path='/paymentonformation' component={PaymentInformation} />
+						<Route path='/paymentinformation' component={PaymentInformation} />
 						<Route path='/orderall' component={OrderAll} />
 						<Route path='/updateorderinformation/:id' component={UpdateOrderInformation} />
 						<Route path='/orderinformation' component={OrderInformation} />

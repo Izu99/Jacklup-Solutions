@@ -15,6 +15,15 @@
     left: 25rem;
 } */
 
+.PaymentInformation table {
+    margin-top: 2rem;
+}
+
+.PaymentInformation table td {
+    margin-top: 2rem;
+    /* border-collapse: separate; */
+    /* border-width: 12rem; */
+}
 .PaymentInformation  button {
     position: absolute;
     display: block;
