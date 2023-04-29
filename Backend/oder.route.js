@@ -43,9 +43,10 @@ oderRoutes.route('/update/:id').post(function (req,res){
         else{
             oder.name = req.body.name;
             oder.email = req.body.email;
-            oder.address = req.body.address;
+            oder.oderNo = req.body.oderNo;
             oder.mobile = req.body.mobile;
             oder.description = req.body.description;
+            oder.date = req.body.date;
        
             oder.save().then(business => {
                 res.json('Update Complete');

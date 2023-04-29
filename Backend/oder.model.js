@@ -10,13 +10,16 @@ Oder = new Schema({
     email: {
         type: String
     },
-    address: {
+    oderNo: {
         type: String
     },
     mobile: {
         type: String
     },
     description: {
+        type: String
+    },
+    date: {
         type: String
     }
  

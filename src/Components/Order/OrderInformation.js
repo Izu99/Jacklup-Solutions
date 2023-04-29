@@ -8,18 +8,22 @@ export default class OrderInformation extends Component {
 		super(props);
 		this.onChangename = this.onChangename.bind(this);
 		this.onChangeemail = this.onChangeemail.bind(this);
-		this.onChangeaddress = this.onChangeaddress.bind(this);
+		// this.onChangeoderNo = this.onChangeoderNo.bind(this);
 		this.onChangemobile = this.onChangemobile.bind(this);
 		this.onChangedescription = this.onChangedescription.bind(this);
+		this.onChangedescription = this.onChangedescription.bind(this);
+		this.onChangedate = this.onChangedate.bind(this);
 		
 		this.onSubmit = this.onSubmit.bind(this);
 
 		this.state = {
 			name: "",
 			email: "",
-			address: "",
+			oderNo: "",
 			mobile: "",
 			description: "",
+			date: "",
+
 			
 		};
 	}
@@ -33,19 +37,22 @@ export default class OrderInformation extends Component {
 			email: e.target.value,
 		});
 	}
-	onChangeaddress(e) {
-		this.setState({
-			address: e.target.value,
-		});
-	}
+
 	onChangemobile(e) {
 		this.setState({
 			mobile: e.target.value,
+			oderNo:"IV"+ e.target.value.substring(6, 10)
+
 		});
 	}
 	onChangedescription(e) {
 		this.setState({
 			description: e.target.value,
+		});
+	}
+	onChangedate(e) {
+		this.setState({
+			date: e.target.value,
 		});
 	}
 	
@@ -57,23 +64,25 @@ export default class OrderInformation extends Component {
 		const obj = {
 			name: this.state.name,
 			email: this.state.email,
-			address: this.state.address,
+			oderNo: this.state.oderNo,
 			mobile: this.state.mobile,
-			description: this.state.description
+			description: this.state.description,
+			date: this.state.date
 			
 		};
 
-
+		alert("Your oderNo is - " +this.state.oderNo);
 	 		if (this.state.mobile.length === 10) {
 	 			if (this.state.description.length > 5) {
 		axios.post("http://localhost:4000/oder/add", obj).then((res) => {
 			alert("add Successfully");
 			this.setState({
 				name: "",
-				email: "",
-				address: "",
-				mobile: "",
-				description: "",
+			email: "",
+			mobile: "",
+			description: "",
+			date: "",
+			
 			});
 			console.log(res.data);
 		});
@@ -95,7 +104,7 @@ export default class OrderInformation extends Component {
 			<div className='OrderInformation'>
 				<h2> Order Information</h2>
 				<form onSubmit={this.onSubmit}>
-				<form action='' className='form1'>
+				{/* <form action='' className='form1'> */}
 					<label htmlFor=''>Full Name</label>
 					<input type='text' required
 									value={this.state.name}
@@ -108,24 +117,35 @@ export default class OrderInformation extends Component {
 									onChange={this.onChangeemail}/>
 					<br />
 					<br />
-					<label htmlFor=''>Address</label>
-					<input type='text' required
-									value={this.state.address}
-									onChange={this.onChangeaddress}/>
-					<br />
-					<br />
+			
 					<label htmlFor=''>Phone Number</label>
 					<input type='number' required
 									value={this.state.mobile}
 									onChange={this.onChangemobile}/>
 					<br />
 					<br />
+					<label htmlFor=''>OderNu</label>
+					<input type='text' required
+									value={this.state.oderNo}
+									// onChange={this.onChangeaddress}
+									/>
+					<br />
+					<br /> 
+					<label htmlFor=''>Date</label>
+					<input name='' id='' cols='30' rows='10'required
+									value={this.state.date}
+									onChange={this.onChangedate}/>
+								<br />
+					<br /> 	
 					<label htmlFor=''>Description</label>
 					<textarea name='' id='' cols='30' rows='10'required
 									value={this.state.description}
 									onChange={this.onChangedescription}/>
+									<br />
+					<br />
+				
           <button type='submit'>Submit</button>
-				</form>
+				{/* </form> */}
 				</form>
 
 				<form action='' className='form2'>
