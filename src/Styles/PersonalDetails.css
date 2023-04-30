@@ -6,7 +6,6 @@
 	height: 100%;
 	margin-bottom: 5rem;
 	padding: 0;
-	
 }
 
 .PersonalDetails .header {
@@ -106,7 +105,7 @@
 	width: 2rem;
 }
 
-.PersonalDetails button {
+.PersonalDetails button:not(.PersonalDetails .order) {
 	position: absolute;
 	left: 40rem;
 	/* top: 38rem; */
@@ -125,4 +124,24 @@
 	margin-top: 4rem;
 	text-align: center;
 	margin-left: 5rem;
+}
+
+.PersonalDetails .order {
+	position: absolute;
+	top: 40rem;
+	left: 65rem;
+	width: 12rem;
+	height: 2rem;
+	border: none;
+	border-radius: 15px;
+	background-color: #3e1b6b44;
+	color: #000000;
+}
+
+.PersonalDetails .order a {
+	text-decoration: none;
+}
+
+.PersonalDetails .order:hover {
+	background-color: #3e1b6b73;
 }

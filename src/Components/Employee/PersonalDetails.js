@@ -71,8 +71,8 @@ export default class PersonalDetails extends Component {
 						<td style={{ fontWeight: "bold" }}>Joined Date</td>
 						{/* <td>{this.props.obj.nic}</td> */}
 					</tr>
-					</table>		
-				
+				</table>
+				<a href='/orderall'><button type="submit" className="order">Orders</button></a>
 			</div>
 		);
 	}

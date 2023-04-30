@@ -22,19 +22,21 @@ export default class PaymentInformation extends Component {
 	render() {
 		return (
 			<div className='PaymentInformation'>
-				<h2>Payment Information</h2>
+				<h2 className='title'>Payment Information</h2>
 				<form action='' className='form1'>
 					<label htmlFor='payment'>
 						{" "}
-						Payment Status
+						<p className='radio-title'> Payment Status</p>
+						{/* <br /> */}
+						{/* <br /> */}
 						<input type='radio' name='payment' />
 						Full Payment
-						<input type='radio' name='payment' />
+						<input type='radio' name='payment' className='rd1' />
 						Half Payment
 					</label>
 					<br />
 					<br />
-					<p>Payment Type</p>
+					<p className='radio-title'>Payment Type</p>
 					<label>
 						<input
 							type='radio'
@@ -52,38 +54,46 @@ export default class PaymentInformation extends Component {
 							value='switch2'
 							checked={this.state.selectedSwitch === "switch2"}
 							onChange={this.handleSwitchChange}
+							className='rd1'
 						/>
 						Bank Deposit
 					</label>
 					<div className='switch'>
-            {/* Credit Card details retrieve from the table */}
+						{/* Credit Card details retrieve from the table */}
 						{this.state.selectedSwitch === "switch1" && (
 							<div className='switch2'>
 								<table>
 									<tr>
-										<td>Card Number</td>
-										<td>00000000000000</td>
+										<td className='details'>Card Number</td>
+										<td>
+											<input type='text' />
+										</td>
 									</tr>
 									<tr>
-										<td> Expire Date</td>
-										<td>01/02/2011</td>
+										<td className='details'> Expire Date</td>
+										<td>
+											<input type='date' />
+										</td>
 									</tr>
 									<tr>
-										<td>Cvv Number</td>
-										<td> 000</td>
+										<td className='details'>Cvv Number</td>
+										<td>
+											<input type='text' />
+										</td>
 									</tr>
 								</table>
+								<button type='submit'>Pay Now</button>
 							</div>
 						)}
 
-            {/* Company Bank Details */}
+						{/* Company Bank Details */}
 						{this.state.selectedSwitch === "switch2" && (
 							<div className='switch1'>
-								<p>Bank Information</p>
-								<p>Name: Jacklup Solution</p>
-								<p>Acc Number: 10000000</p>
-								<p>Bank: BOC</p>
-								<p>Branch: Piliyandala</p>
+								<p className='bank-title'>Bank Information</p>
+								<p className='details'>Name: Jacklup Solution</p>
+								<p className='details'>Acc Number: 10000000</p>
+								<p className='details'>Bank: BOC</p>
+								<p className='details'>Branch: Piliyandala</p>
 
 								<label htmlFor=''>
 									Upload Official Bank Statement

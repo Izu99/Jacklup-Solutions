@@ -1,39 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
+
+
 .PaymentInformation {
-
-    /* display: block; */
+	background-color: #c9b3e7;
+	margin: 0;
+	padding-bottom: 4rem;
 }
 
-.PaymentInformation form {
-    margin-left: 12rem;
-    margin-top: 12rem;
-}
-/* .PaymentInformation form label {
-    margin-top: 2rem;
-} */
-/* .PaymentInformation form input,textarea {
-    position: absolute;
-    left: 25rem;
-} */
-
-.PaymentInformation table {
-    margin-top: 2rem;
+.PaymentInformation .form1 {
+	margin-left: 12rem;
+	background-color: #ffffffe8;
+	width: 35rem;
+	padding: 2rem;
+	border-radius: 15px;
 }
 
-.PaymentInformation table td {
-    margin-top: 2rem;
-    /* border-collapse: separate; */
-    /* border-width: 12rem; */
+.PaymentInformation h2.title {
+	margin-left: 28rem;
+	font-size: 2.4rem;
+	/* padding-top: 12rem; */
 }
-.PaymentInformation  button {
-    position: absolute;
-    display: block;
-    top: 35rem;
-    left: 50rem;
+
+.PaymentInformation .radio-title {
+	font-size: 20px;
+	padding-bottom: 0.1rem;
+}
+
+.PaymentInformation button {
+	position: absolute;
+	display: block;
+	top: 35rem;
+	left: 50rem;
 }
 
 .PaymentInformation .form2 {
-    position: absolute;
-    top: 5rem;
-    left: 50rem;
-    margin-left: 15rem;
+	position: absolute;
+	top: 15rem;
+	left: 50rem;
+	margin-left: 15rem;
+	background-color: #ffffffe0;
+	padding: 2rem;
+	border-radius: 5px;
+    /* font-family: 'Josefin Sans', sans-serif; */
+}
+
+.PaymentInformation .form2 td {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+}
+.PaymentInformation input[type="radio"] {
+	margin-right: 0.8rem;
+	transform: scale(1.1);
+}
+
+.PaymentInformation input[type="radio"].rd1 {
+	margin-left: 2rem;
+}
+
+.PaymentInformation label.payment {
+	font-size: 20px;
+}
+
+.PaymentInformation .switch {
+	margin-top: 2rem;
+	background-color: #e7e5e5;
+	border-radius: 15px;
+	width: 25rem;
+	height: 20rem;
+	padding: 2rem;
+}
+
+.PaymentInformation td.details {
+	padding: 1rem 0.6rem;
+}
+
+.PaymentInformation td input {
+	border-radius: 5px;
+	border: 1px solid #bdbbbb;
+	width: 14rem;
+	height: 1.4rem;
+}
+
+.PaymentInformation .details {
+	margin-top: 1.2rem;
+	font-size: 1rem;
+	font-weight: 500;
+	padding: 0.4rem;
 }
