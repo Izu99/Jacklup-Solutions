@@ -8,23 +8,23 @@
 	/* margin-left: 12rem; */
 	background-color: #c9b3e7;
 	height: 40rem;
-    width: 70rem;
-    margin-left: 8rem;
-    border-radius: 15px;
+	width: 70rem;
+	margin-left: 8rem;
+	border-radius: 15px;
 }
 
 .OrderAll h2 {
-    padding-top: 2rem;
-    margin-left: 6rem;
+	padding-top: 2rem;
+	margin-left: 6rem;
 }
 
 .OrderAll table {
 	position: absolute;
-	margin-top: 5%;
-	width: 60%;
+	/* margin-top: 5%; */
+	width: 70%;
 	/* border-collapse: separate; */
 	/* border-spacing: 10px; */
-	margin-left: 20.5rem;
+	margin-left: 12.5rem;
 	/* background-color: #000000; */
 	text-align: center;
 	background-color: #ffffff;
@@ -50,5 +50,37 @@
 }
 
 .OrderAll .sidebar {
-    
+	width: 100%;
+}
+
+.OrderAll .sidebar button {
+	margin-top: 2rem;
+	width: 12.5rem;
+	height: 2.8rem;
+	border: none;
+	border-left: 4px solid #ece9e9;
+
+	/* border-radius: 5px; */
+	background-color: #ffffff;
+}
+
+.OrderAll .top-nav {
+	background-color: #ffffff;
+	height: 4rem;
+	width: 80.9%;
+	margin-left: 12.5rem;
+}
+
+.OrderAll .top-nav ul {
+	display: flex;
+	list-style: none;
+}
+
+.OrderAll .top-nav ul li {
+	padding-top: 1rem;
+	margin-left: 6rem;
+}
+
+.OrderAll .top-nav ul li a {
+	text-decoration: none;
 }

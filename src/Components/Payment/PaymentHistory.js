@@ -100,14 +100,15 @@ export default class PaymentHistory extends Component {
 						</table>
 					)}
 					{activeTab === "halfpayment" && (
-						<table className='halfpayment'><h2>Half Paymnet</h2></table>
+						<table className='halfpayment'>
+							<h2>Half Paymnet</h2>
+						</table>
 					)}
 					{activeTab === "refund" && (
-						<table className='refund'><h2>Refund</h2></table>
+						<table className='refund'>
+							<h2>Refund</h2>
+						</table>
 					)}
-
-					
-					
 
 					<div className='sidebar'>
 						<button>Payment history</button>
