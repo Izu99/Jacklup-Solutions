@@ -1,25 +1,41 @@
 .OrderInformation {
-
-    /* display: block; */
+    margin-bottom: 2rem;
+}
+.OrderInformation h2 {
+    margin-left: 30rem;
+    font-size: 2.5rem;
 }
 
 .OrderInformation form {
-    margin-left: 12rem;
-    margin-top: 12rem;
+    margin-left: 25rem;
+    margin-top: 5rem;
+    border-radius: 15px;
+    border: 2px solid #C9B3E7;
+    box-shadow: 0px 0px 4px #C9B3E7;
+    width: 30rem;
+    padding: 2rem;
+    height: 35rem;
 }
 .OrderInformation form label {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
-.OrderInformation form input,textarea {
+.OrderInformation form input,textarea,select {
     position: absolute;
-    left: 25rem;
+    left: 38rem;
+    /* border: none; */
 }
 
 .OrderInformation  button {
     position: absolute;
     display: block;
-    top: 35rem;
-    left: 50rem;
+    top: 44rem;
+    left: 38rem;
+    width: 10rem;
+    height: 2rem;
+    border: none;
+    border-radius: 15px;
+    color: #000000;
+    background-color: #C9B3E7;
 }
 
 .OrderInformation .form2 {

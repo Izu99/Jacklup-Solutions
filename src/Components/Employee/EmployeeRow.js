@@ -36,7 +36,7 @@ class TableRow extends Component {
                    {this.props.obj.status}
                </td>
                <td>
-                   <Link to={"/EditEmployee/"+this.props.obj._id} className="btn btn-success">Edit</Link>
+                   <button><Link to={"/EditEmployee/"+this.props.obj._id} className="btn btn-success">Edit</Link></button>
                    {/* <br/><br/> */}  &nbsp;
                    <button onClick={this.delete} className="btn btn-danger">Delete</button>
                </td>
