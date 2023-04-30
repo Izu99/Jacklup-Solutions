@@ -27,6 +27,9 @@ class TableRow extends Component {
                    {this.props.obj.pstatus}
                </td>
                <td>
+                   {this.props.obj.date}
+               </td>
+               <td>
                    {this.props.obj.price}
                </td>
             

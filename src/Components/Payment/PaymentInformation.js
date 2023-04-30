@@ -177,7 +177,7 @@ export default class PaymentInformation extends Component {
 											</td>
 										</tr>
 									</table>
-									<button type='submit'>Pay Now</button>
+									{/* <button type='submit'>Pay Now</button> */}
 								</div>
 							)}
 							</div>
@@ -195,7 +195,7 @@ export default class PaymentInformation extends Component {
 										Upload Official Bank Statement
 										<input type='file' />
 									</label>
-									<button type='submit'>Pay Now</button>
+									{/* <button type='submit'>Pay Now</button> */}
 								</div>
 							)}
 					
@@ -254,8 +254,9 @@ export default class PaymentInformation extends Component {
 							</tr>
 						</table>
 					</form>
-					{/* <button type='submit'>Pay Now</button> */}
+					
 				</form>
+				<button type='submit'>Pay Now</button>
 				</form>
 			</div>
 		);

@@ -8,8 +8,17 @@ export default class PaymentHistory extends Component {
 		super(props);
 		this.state = {
 			activeTab: "allpayment",
+			phistory: [], search: ""
+			
 		};
 		this.handleTabClick = this.handleTabClick.bind(this);
+		this.onChangeSearch = this.onChangeSearch.bind(this);
+	}
+
+	onChangeSearch(e) {
+		this.setState({
+			search: e.target.value,
+		});
 	}
 
 	handleTabClick(tab) {
@@ -17,6 +26,26 @@ export default class PaymentHistory extends Component {
 			activeTab: tab,
 		});
 	}
+
+	componentDidMount() {
+		// alert('email is ' +this.props.match.params.id);
+		axios
+			.get("http://localhost:4000/pay/getall/")
+			.then((response) => {
+				// alert('Pass una')
+				// alert('Data Tika :'+response.data)
+				this.setState({ phistory: response.data });
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
+	 tabRow() {
+	 	return this.state.phistory.map(function (object, i) {
+	 		return <TableRow obj={object} key={i} />;
+		});
+	}
+
 	render() {
 		const { activeTab } = this.state;
 		return (
@@ -64,32 +93,12 @@ export default class PaymentHistory extends Component {
 						<table className='allpayment'>
 							<thead>
 								<th>Transaction ID</th>
-								<th>Status</th>
 								<th>Payment</th>
+								<th>Date</th>
 								<th>Amount</th>
 							</thead>
-							<tr>
-								<td>INV-002</td>
-								<td>Full Payment</td>
-								<td>date</td>
-								<td>Rs. 2000.00</td>
-								<td>
-									<i>
-										<i class='fa-solid fa-ellipsis-vertical'></i>
-									</i>
-								</td>
-							</tr>
-							<tr>
-								<td>INV-002</td>
-								<td>Full Payment</td>
-								<td>date</td>
-								<td>Rs. 2000.00</td>
-								<td>
-									<i>
-										<i class='fa-solid fa-ellipsis-vertical'></i>
-									</i>
-								</td>
-							</tr>
+							<tbody>{this.tabRow()}</tbody> 
+							
 						</table>
 					)}
 					{activeTab === "fullpayment" && (
