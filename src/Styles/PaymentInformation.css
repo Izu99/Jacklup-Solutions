@@ -16,6 +16,8 @@
 }
 
 .PaymentInformation h2.title {
+    margin: 0;
+    padding: 2rem;
 	margin-left: 28rem;
 	font-size: 2.4rem;
 	/* padding-top: 12rem; */
@@ -29,19 +31,33 @@
 .PaymentInformation button {
 	position: absolute;
 	display: block;
-	top: 35rem;
-	left: 50rem;
+	top: 48rem;
+    margin-bottom: 2rem;
+    	left: 25rem;
+    width: 10rem;
+    height: 2rem;
+    border: none;
+    border-radius: 15px;
+    background-color: #C9B3E7;
+
 }
 
 .PaymentInformation .form2 {
 	position: absolute;
-	top: 15rem;
-	left: 50rem;
+	top: 10rem;
+	left: 45rem;
 	margin-left: 15rem;
-	background-color: #ffffffe0;
+	background-color: #ffffffe8;
 	padding: 2rem;
 	border-radius: 5px;
     /* font-family: 'Josefin Sans', sans-serif; */
+    width: 14rem;
+}
+
+.PaymentInformation .form2 input {
+    border: 1px solid #e6e3e3;
+    background-color: #f1f1f1;
+    font-weight: 550;
 }
 
 .PaymentInformation .form2 td {
@@ -66,11 +82,12 @@
 	background-color: #e7e5e5;
 	border-radius: 15px;
 	width: 25rem;
-	height: 20rem;
+	height: 22rem;
 	padding: 2rem;
 }
 
 .PaymentInformation td.details {
+    margin-top: 2rem;
 	padding: 1rem 0.6rem;
 }
 
@@ -86,4 +103,13 @@
 	font-size: 1rem;
 	font-weight: 500;
 	padding: 0.4rem;
+}
+
+.PaymentInformation .bank-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.PaymentInformation .switch1 label {
+    font-size: 1.2rem;
 }
