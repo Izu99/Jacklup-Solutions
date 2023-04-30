@@ -118,7 +118,7 @@ empleeyeeRoutes.route('/search/:pathParam1?').get(function (req, res){
     console.log("your search is "+search);
 
     // Orders.find({$and:[{date : search},{email : email}]},function (err,srch){
-        Empleeyee.find({$and:[{$or: [{vName: search}, {lName: search},{pNumber: search},{email: search}]}]},function (err,srch){ 
+        Empleeyee.find({$and:[{$or: [{name: search}, {empId: search},{posision: search}]}]},function (err,srch){ 
         if(err)
             console.log(err);
         else{

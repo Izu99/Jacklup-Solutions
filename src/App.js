@@ -14,6 +14,7 @@ import EmployeeView from "./Components/Employee/EmployeeView";
 import AvailableVacancies from "./Components/Employee/AvailableVacancies";
 import PersonalDetails from "./Components/Employee/PersonalDetails";
 import EditEmployee from "./Components/Employee/EditEmployee";
+import employeeSearch from "./Components/Employee/employeeSearch";
 import PersonalDetailsAdmin from "./Components/Employee/PersonalDetailsAdmin";
 import PaymentHistory from "./Components/Payment/PaymentHistory";
 import Login from "./Components/Login";
@@ -58,6 +59,7 @@ class App extends Component {
 						<Route path='/myOdersView' component={myOdersView} />
 						<Route path='/submitOder/:id' component={submitOder} />
 						<Route path='/myOders/:id' component={myOders} />
+						<Route path='/employeeSearch/:pathParam1?' component={employeeSearch} />
 						{/* <Redirect path to='/404' Component={PageNotFound}/> */}
 					</Switch>
 				</Router>

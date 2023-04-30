@@ -54,6 +54,10 @@ export default class PersonalDetails extends Component {
 						<td style={{ fontWeight: "bold" }}>Age</td>
 						<td>{this.props.obj.age}</td>
 					</tr>
+					<tr>
+						<td style={{ fontWeight: "bold" }}>empId</td>
+						<td>{this.props.obj.empId}</td>
+					</tr>
 					{/* <tr>
 						<td style={{ fontWeight: "bold" }}>Emp No</td>
 						{/* <td>{this.props.obj.phoneNu}</td> *

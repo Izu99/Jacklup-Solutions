@@ -65,7 +65,7 @@ export default class PersonalDetails extends Component {
 				<table className='table2'>
 					<tr>
 						<td style={{ fontWeight: "bold" }}>Emp No</td>
-						{/* <td>{this.props.obj.phoneNu}</td> */}
+						{/* <td>{this.props.obj.empId}</td> */}
 					</tr>
 					<tr>
 						<td style={{ fontWeight: "bold" }}>Joined Date</td>
