@@ -25,7 +25,15 @@ MyOder = new Schema({
     ,
     status: {
         type: String
+    },
+    price: {
+        type: String
     }
+    ,
+    jtype: {
+        type: String
+    }
+ 
  
  },
   {

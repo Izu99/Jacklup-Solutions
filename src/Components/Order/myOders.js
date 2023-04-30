@@ -23,6 +23,8 @@ export default class OrderInformation extends Component {
 			description: "",
 			date: "",
             status: "",
+            price: "",
+            jtype: "",
 
 			
 		};
@@ -41,6 +43,8 @@ export default class OrderInformation extends Component {
                   mobile: res.data.mobile,
                   description: res.data.description,
                   date: res.data.date,
+                  price: res.data.price,
+                  jtype: res.data.jtype,
         
                    
                 });
@@ -101,6 +105,8 @@ export default class OrderInformation extends Component {
 			description: this.state.description,
 			date: this.state.date,
             status: this.state.status,
+            jtype: this.state.jtype,
+            price: this.state.price,
 			
 		};
 

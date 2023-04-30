@@ -21,6 +21,13 @@ Oder = new Schema({
     },
     date: {
         type: String
+    },
+    price: {
+        type: String
+    }
+    ,
+    jtype: {
+        type: String
     }
  
  },
