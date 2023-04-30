@@ -218,10 +218,6 @@ export default class OrderInformation extends Component {
 					<button type='submit'>Submit</button>
 					{/* </form> */}
 				</form>
-
-				<form action='' className='form2'>
-					
-				</form>
 			</div>
 		);
 	}
