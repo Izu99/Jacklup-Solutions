@@ -57,32 +57,36 @@ export default class PaymentHistory extends Component {
 							<li>
 								<a
 									href='#'
-									onClick={() => this.handleTabClick("allpayment")}
-									className={activeTab === "allpayment" ? "active" : ""}>
+									// onClick={() => this.handleTabClick("allpayment")}
+									// className={activeTab === "allpayment" ? "active" : ""}>
+									>
 									All Payment
 								</a>
 							</li>
 							<li>
 								<a
 									href='#'
-									onClick={() => this.handleTabClick("fullpayment")}
-									className={activeTab === "fullpayment" ? "active" : ""}>
+									// onClick={() => this.handleTabClick("fullpayment")}
+									// className={activeTab === "fullpayment" ? "active" : ""}>
+									>
 									Full Payment
 								</a>
 							</li>
 							<li>
 								<a
 									href='#'
-									onClick={() => this.handleTabClick("halfpayment")}
-									className={activeTab === "halfpayment" ? "active" : ""}>
+									// onClick={() => this.handleTabClick("halfpayment")}
+									// className={activeTab === "halfpayment" ? "active" : ""}>
+									>
 									Half Payment
 								</a>
 							</li>
 							<li>
 								<a
 									href='#'
-									onClick={() => this.handleTabClick("refund")}
-									className={activeTab === "refund" ? "active" : ""}>
+									// onClick={() => this.handleTabClick("refund")}
+									// className={activeTab === "refund" ? "active" : ""}>
+									>
 									Refund
 								</a>
 							</li>

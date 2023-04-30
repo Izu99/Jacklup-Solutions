@@ -6,14 +6,14 @@ export default class OrderAll extends Component {
 	// constructor(props) {
 	// 	super(props);
 	// 	this.state = {
-	// 		activeTab: "allpayment",
+			// activeTab: "allpayment",
 	// 	};
 	// 	this.handleTabClick = this.handleTabClick.bind(this);
 	// }
 
 	handleTabClick(tab) {
 		this.setState({
-			activeTab: tab,
+			// activeTab: tab,
 		});
 	}
 
@@ -24,7 +24,7 @@ export default class OrderAll extends Component {
 
 		this.onChangeSearch = this.onChangeSearch.bind(this);
 
-		this.state = { activeTab: "allorder" };
+		// this.state = { activeTab: "allorder" };
 		this.handleTabClick = this.handleTabClick.bind(this);
 	}
 
@@ -56,7 +56,7 @@ export default class OrderAll extends Component {
 	}
 
 	render() {
-		const { activeTab } = this.state;
+		// const { activeTab } = this.state;
 		return (
 			<div className='OrderAll'>
 				<div className='history'>
@@ -66,65 +66,73 @@ export default class OrderAll extends Component {
 							<li>
 								<a
 									href='#'
-									onClick={() => this.handleTabClick("allorder")}
-									className={activeTab === "allorder" ? "active" : ""}>
+									// onClick={() => this.handleTabClick("allorder")}
+									// className={activeTab === "allorder" ? "active" : ""}>
+									>
+									
 									All Payment
 								</a>
 							</li>
 							<li>
 								<a
 									href='#'
-									onClick={() => this.handleTabClick("completeorder")}
-									className={activeTab === "completeorder" ? "active" : ""}>
+									// onClick={() => this.handleTabClick("completeorder")}
+									// className={activeTab === "completeorder" ? "active" : ""}>
+									>
+									
 									Full Payment
 								</a>
 							</li>
 							<li>
 								<a
 									href='#'
-									onClick={() => this.handleTabClick("ongoingorder")}
-									className={activeTab === "ongoingorder" ? "active" : ""}>
+									// onClick={() => this.handleTabClick("ongoingorder")}
+									// className={activeTab === "ongoingorder" ? "active" : ""}>
+									>
+									
 									Half Payment
 								</a>
 							</li>
 							<li>
 								<a
 									href='#'
-									onClick={() => this.handleTabClick("deleteorder")}
-									className={activeTab === "deleteorder" ? "active" : ""}>
+									// onClick={() => this.handleTabClick("deleteorder")}
+									// className={activeTab === "deleteorder" ? "active" : ""}>
+									>
+									
 									Refund
 								</a>
 							</li>
 						</ul>
 					</div>
-					{activeTab === "allorder" && (
+					{/* {activeTab === "allorder" && ( */}
 						<table className='allorder'>
 							<thead>
 								<th>Invoice</th>
 								<th>Order Date</th>
 							</thead>
 
-							{/* <tbody>{this.tabRow()}</tbody> */}
+							<tbody>{this.tabRow()}</tbody>
 						</table>
-					)}
+					{/* )} */}
 
-					{activeTab === "completeorder" && (
-						<table>
+					{/* {activeTab === "completeorder" && ( */}
+						{/* <table>
 							<h2> Complete Order</h2>{" "}
-						</table>
-					)}
+						</table> */}
+					{/* )} */}
 
-					{activeTab === "ongoingorder" && (
-						<table>
+					{/* {activeTab === "ongoingorder" && ( */}
+						{/* <table>
 							<h2>Ongoing Order</h2>
-						</table>
-					)}
+						</table> */}
+					{/* )} */}
 
-					{activeTab === "deleteorder" && (
-						<table>
+					{/* {activeTab === "deleteorder" && ( */}
+						{/* <table>
 							<h2>Delete Order</h2>
-						</table>
-					)}
+						</table> */}
+					{/* )} */}
 
 					<div className='sidebar'>
 						<button>Order history</button>
