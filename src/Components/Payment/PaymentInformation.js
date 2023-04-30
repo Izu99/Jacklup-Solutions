@@ -127,8 +127,61 @@ export default class PaymentInformation extends Component {
 										onChange={this.onChangepstatus} />
 						Half Payment
 					</label>
-					
-					
+
+					<form onSubmit={this.onSubmit}>
+						<br />
+						<br />
+						<p className='radio-title'>Payment Type</p>
+						<label>
+							<input
+								type='radio'
+								name='switch'
+								value='switch1'
+								checked={this.state.selectedSwitch === "switch1"}
+								onChange={this.handleSwitchChange}
+							/>
+							Credit Card
+						</label>
+						<label>
+							<input
+								type='radio'
+								name='switch'
+								value='switch2'
+								checked={this.state.selectedSwitch === "switch2"}
+								onChange={this.handleSwitchChange}
+								className='rd1'
+							/>
+							Bank Deposit
+						</label>
+						<div className='switch'>
+							{/* Credit Card details retrieve from the table */}
+							{this.state.selectedSwitch === "switch1" && (
+								<div className='switch2'>
+									<table>
+										<tr>
+											<td className='details'>Card Number</td>
+											<td>
+												<input type='text' />
+											</td>
+										</tr>
+										<tr>
+											<td className='details'> Expire Date</td>
+											<td>
+												<input type='date' />
+											</td>
+										</tr>
+										<tr>
+											<td className='details'>Cvv Number</td>
+											<td>
+												<input type='text' />
+											</td>
+										</tr>
+									</table>
+									<button type='submit'>Pay Now</button>
+								</div>
+							)}
+							</div>
+
 							{/* Company Bank Details */}
 							{this.state.selectedSwitch === "switch2" && (
 								<div className='switch1'>
@@ -142,7 +195,7 @@ export default class PaymentInformation extends Component {
 										Upload Official Bank Statement
 										<input type='file' />
 									</label>
-									{/* <button type='submit'>Pay Now</button> */}
+									<button type='submit'>Pay Now</button>
 								</div>
 							)}
 					
@@ -201,7 +254,8 @@ export default class PaymentInformation extends Component {
 							</tr>
 						</table>
 					</form>
-					<button type='submit'>Pay Now</button>
+					{/* <button type='submit'>Pay Now</button> */}
+				</form>
 				</form>
 			</div>
 		);

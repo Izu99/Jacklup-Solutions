@@ -4,44 +4,21 @@ import "../../Styles/PaymentHistory.css";
 import TableRow from "./paymnetRow";
 
 export default class PaymentHistory extends Component {
-
-
 	constructor(props) {
 		super(props);
-		this.state = { phistory: [], search: "" };
-		this.state.Station = this.props.match.params.id;
-
-		this.onChangeSearch = this.onChangeSearch.bind(this);
+		this.state = {
+			activeTab: "allpayment",
+		};
+		this.handleTabClick = this.handleTabClick.bind(this);
 	}
 
-	onChangeSearch(e) {
+	handleTabClick(tab) {
 		this.setState({
-			search: e.target.value,
+			activeTab: tab,
 		});
 	}
-
-	componentDidMount() {
-		// alert('email is ' +this.props.match.params.id);
-		axios
-			.get("http://localhost:4000/pay/getall/")
-			.then((response) => {
-				// alert('Pass una')
-				// alert('Data Tika :'+response.data)
-				this.setState({ phistory: response.data });
-			})
-			.catch(function (error) {
-				console.log(error);
-			});
-	}
-
-	 tabRow() {
-	 	return this.state.phistory.map(function (object, i) {
-	 		return <TableRow obj={object} key={i} />;
-	 	});	
-	 }
-
-
 	render() {
+		const { activeTab } = this.state;
 		return (
 			<div className='paymentHistory'>
 				<div className='history'>
@@ -49,30 +26,89 @@ export default class PaymentHistory extends Component {
 					<div className='top-nav'>
 						<ul>
 							<li>
-								<a href=''>All Payment</a>{" "}
+								<a
+									href='#'
+									onClick={() => this.handleTabClick("allpayment")}
+									className={activeTab === "allpayment" ? "active" : ""}>
+									All Payment
+								</a>
 							</li>
 							<li>
-								<a href=''> Full Payment</a>
+								<a
+									href='#'
+									onClick={() => this.handleTabClick("fullpayment")}
+									className={activeTab === "fullpayment" ? "active" : ""}>
+									Full Payment
+								</a>
 							</li>
 							<li>
-								<a href=''> Half Payment</a>
+								<a
+									href='#'
+									onClick={() => this.handleTabClick("halfpayment")}
+									className={activeTab === "halfpayment" ? "active" : ""}>
+									Half Payment
+								</a>
 							</li>
 							<li>
-								<a href=''>Refund</a>{" "}
+								<a
+									href='#'
+									onClick={() => this.handleTabClick("refund")}
+									className={activeTab === "refund" ? "active" : ""}>
+									Refund
+								</a>
 							</li>
 						</ul>
 					</div>
-					<table>
-						<thead>
-							<th>Transaction ID</th>
-							<th>Payment Date</th>
-							<th>Amount</th>
-						</thead>
 
-						 <tbody>{this.tabRow()}</tbody>
-				
+					{activeTab === "allpayment" && (
+						<table className='allpayment'>
+							<thead>
+								<th>Transaction ID</th>
+								<th>Status</th>
+								<th>Payment</th>
+								<th>Amount</th>
+							</thead>
+							<tr>
+								<td>INV-002</td>
+								<td>Full Payment</td>
+								<td>date</td>
+								<td>Rs. 2000.00</td>
+								<td>
+									<i>
+										<i class='fa-solid fa-ellipsis-vertical'></i>
+									</i>
+								</td>
+							</tr>
+							<tr>
+								<td>INV-002</td>
+								<td>Full Payment</td>
+								<td>date</td>
+								<td>Rs. 2000.00</td>
+								<td>
+									<i>
+										<i class='fa-solid fa-ellipsis-vertical'></i>
+									</i>
+								</td>
+							</tr>
+						</table>
+					)}
+					{activeTab === "fullpayment" && (
+						<table className='fullpayment'>
+							<div className='sample'>
+								<h2>full Paymnet</h2>
+							</div>
+						</table>
+					)}
+					{activeTab === "halfpayment" && (
+						<table className='halfpayment'><h2>Half Paymnet</h2></table>
+					)}
+					{activeTab === "refund" && (
+						<table className='refund'><h2>Refund</h2></table>
+					)}
+
 					
-					</table>
+					
+
 					<div className='sidebar'>
 						<button>Payment history</button>
 						<br />
