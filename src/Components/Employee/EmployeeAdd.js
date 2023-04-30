@@ -36,6 +36,7 @@ export default class EmployeeAdd extends Component {
 			password: "",
 			cpassword: "",
 			status: "",
+			empId: "",
 		};
 	}
 	onChangename(e) {
@@ -51,6 +52,7 @@ export default class EmployeeAdd extends Component {
 	onChangemobile(e) {
 		this.setState({
 			mobile: e.target.value,
+			empId:"Emp0"+ e.target.value.substring(7, 10)
 		});
 	}
 	onChangetel(e) {
@@ -103,9 +105,10 @@ export default class EmployeeAdd extends Component {
 			password: this.state.password,
 			cpassword: this.state.cpassword,
 			status: this.state.status,
+			empId: this.state.empId,
 		};
 
-	
+		alert("Your empId is - " + this.state.empId);
 	 if (this.state.password === this.state.cpassword) {
 	 	if (this.state.age > 17) {
 	 		if (this.state.mobile.length === 10) {
@@ -126,7 +129,7 @@ export default class EmployeeAdd extends Component {
 			});
 			console.log(res.data);
 		});
-		this.props.history.push("/");
+		this.props.history.push("/employeeview");
 		 				} else {
 		 					alert("Invalid phone Number.. Pleace enter more than 10 digit.");
 		 				}

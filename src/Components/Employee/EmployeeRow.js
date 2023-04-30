@@ -13,8 +13,8 @@ class TableRow extends Component {
             .then(this.setState({redirect: true}))
             .catch(err => console.log(err))
         //this.props.history.push('/index');
-        alert("Your Order Successfully Deleted....")
-        window.location.replace('/inventoryView/'+this.props.obj.email);
+        alert("Employee Successfully Deleted....")
+        window.location.replace('/employeeview');
     }
     render() {
         return (
@@ -24,7 +24,7 @@ class TableRow extends Component {
                    {this.props.obj.name}
                </td>
                <td>
-                   {this.props.obj.mobile}
+                   {this.props.obj.empId}
                </td>
                <td>
                    {this.props.obj.email}

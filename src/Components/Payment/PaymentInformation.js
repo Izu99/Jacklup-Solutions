@@ -49,6 +49,7 @@ export default class PaymentInformation extends Component {
 	
 
 	componentDidMount() {
+		
 		axios
 			.get("http://localhost:4000/myOder/edit/" + this.props.match.params.id)
 			.then((res) => {
@@ -94,7 +95,7 @@ export default class PaymentInformation extends Component {
 			payId: this.state.payId,
 		};
 
-		alert("Your pstatus is - " + this.state.pstatus);
+		alert("Your payId is - " + this.state.payId);
 
 		axios
 			.post("http://localhost:4000/pay/add", obj)
