@@ -45,7 +45,7 @@ class App extends Component {
 						<Route path='/paymenthistory' component={PaymentHistory} />
 						<Route path='/login' component={Login} />
 						{/* <Route path='/' component={Login} /> */}
-						<Route path='/orderall' component={OrderAll} />
+						{/* <Route path='/orderall' component={OrderAll} /> */}
 
 						<Route path='/updateorderinformation/:id' component={UpdateOrderInformation} />
 						<Route path='/orderinformation/:id' component={OrderInformation} />

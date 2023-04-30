@@ -107,7 +107,7 @@ export default class PaymentInformation extends Component {
 				});
 				console.log(res.data);
 			});
-		this.props.history.push("/");
+		this.props.history.push("/paymenthistory");
 	}
 
 	render() {

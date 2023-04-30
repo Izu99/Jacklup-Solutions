@@ -107,7 +107,7 @@ export default class OrderInformation extends Component {
 					});
 					console.log(res.data);
 				});
-				this.props.history.push("/");
+				this.props.history.push("/orderall");
 			} else {
 				alert("Insert more than 5 characters..");
 			}

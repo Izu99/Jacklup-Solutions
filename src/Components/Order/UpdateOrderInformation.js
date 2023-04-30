@@ -3,7 +3,6 @@ import axios from "axios";
 import "../../Styles/OrderInformation.css";
 
 export default class OrderInformation extends Component {
-
 	constructor(props) {
 		super(props);
 		this.onChangename = this.onChangename.bind(this);
@@ -15,7 +14,7 @@ export default class OrderInformation extends Component {
 		this.onChangedate = this.onChangedate.bind(this);
 		this.onChangejtype = this.onChangejtype.bind(this);
 		this.onChangeprice = this.onChangeprice.bind(this);
-		
+
 		this.onSubmit = this.onSubmit.bind(this);
 
 		this.state = {
@@ -27,31 +26,31 @@ export default class OrderInformation extends Component {
 			date: "",
 			jtype: "",
 			price: "",
-
-			
 		};
 	}
 
+
+
 	componentDidMount() {
-		// alert('edit id ' +this.props.match.params.id);
-		axios.get('http://localhost:4000/oder/edit/'+this.props.match.params.id)
-			.then(res => {
-				this.setState({
-				  name: res.data.name,
-				  email: res.data.email,
-				  address: res.data.address,
-				  mobile: res.data.mobile,
-				  description: res.data.description,
-				  jtype: res.data.jtype,
-				  price: res.data.price,
-		
-				   
-				});
-			})
-			.catch(function (error){
-				console.log("Can't Get Data");
-			})
-	}
+        // alert('edit id ' +this.props.match.params.id);
+        axios.get('http://localhost:4000/oder/edit/'+this.props.match.params.id)
+            .then(res => {
+                this.setState({
+                    name: res.data.name,
+                    email: res.data.email,
+                    oderNo: res.data.oderNo,
+                    mobile: res.data.mobile,
+					description: res.data.description,
+					date: res.data.date,
+					price: res.data.price,
+					
+                   
+                });
+            })
+            .catch(function (error){
+                console.log("Can't Get Data");
+            })
+    }
 
 	onChangename(e) {
 		this.setState({
@@ -67,8 +66,7 @@ export default class OrderInformation extends Component {
 	onChangemobile(e) {
 		this.setState({
 			mobile: e.target.value,
-			oderNo:"IV"+ e.target.value.substring(6, 10)
-
+			oderNo: "IV" + e.target.value.substring(6, 10),
 		});
 	}
 	onChangedescription(e) {
@@ -85,24 +83,15 @@ export default class OrderInformation extends Component {
 	onChangejtype(e) {
 		this.setState({
 			jtype: e.target.value,
-
-			
 		});
 	}
 	onChangeprice(e) {
 		this.setState({
 			price: e.target.value,
-
-			
 		});
 	}
-	
-
-
 
 	onSubmit(e) {
-
-
 		// if (this.state.jtype == "DevOps") {
 		// 	this.state.price = 1000;
 		// } else if (this.state.jtype == "FrontEnd") {
@@ -124,136 +113,134 @@ export default class OrderInformation extends Component {
 			date: this.state.date,
 			price: this.state.price,
 			jtype: this.state.jtype,
-			
 		};
 
-		alert("Your price is - " +this.state.price);
-	 		if (this.state.mobile.length === 10) {
-	 			if (this.state.description.length > 5) {
-					axios.post('http://localhost:4000/oder/update/'+this.props.match.params.id,obj)
-					.then((res) => {
-			alert("add Successfully");
-			this.setState({
-				name: "",
-			email: "",
-			mobile: "",
-			description: "",
-			date: "",
-			price: "",
-			jtype: "",
-
-			
-			});
-			console.log(res.data);
-		});
-		this.props.history.push("/");
-		 				} else {
-		 					alert("Insert more than 5 characters..");
-		 				}
-		 			} else {
-		 				alert("Invalid phone number.. Pleace enter more than 1o digits.");
-		 			}
-		 	
-		 	
-		 
+		alert("Your price is - " + this.state.price);
+		if (this.state.mobile.length === 10) {
+			if (this.state.description.length > 5) {
+				axios.post('http://localhost:4000/oder/update/'+this.props.match.params.id,obj).then((res) => {
+					alert("add Successfully");
+					this.setState({
+						name: "",
+						email: "",
+						mobile: "",
+						description: "",
+						date: "",
+						price: "",
+						jtype: "",
+					});
+					console.log(res.data);
+				});
+				this.props.history.push("/orderall");
+			} else {
+				alert("Insert more than 5 characters..");
+			}
+		} else {
+			alert("Invalid phone number.. Pleace enter more than 1o digits.");
+		}
 	}
-
 
 	render() {
 		return (
 			<div className='OrderInformation'>
 				<h2> Order Information</h2>
 				<form onSubmit={this.onSubmit}>
-				{/* <form action='' className='form1'> */}
+					{/* <form action='' className='form1'> */}
 					<label htmlFor=''>Full Name</label>
-					<input type='text' required
-									value={this.state.name}
-									onChange={this.onChangename}/>
+					<input
+						type='text'
+						required
+						value={this.state.name}
+						onChange={this.onChangename}
+					/>
 					<br />
 					<br />
 					<label htmlFor=''>Email</label>
-					<input type='email' required
-									value={this.state.email}
-									onChange={this.onChangeemail}/>
+					<input
+						type='email'
+						required
+						value={this.state.email}
+						onChange={this.onChangeemail}
+					/>
 					<br />
 					<br />
 
 					<div className='detail'>
-							<label htmlFor=''> Job</label>
-							<select
-								required
-								value={this.state.jtype}
-								onChange={this.onChangejtype}
-								className='form-control'>
-								<option>Choose Type</option>
-								<option value='DevOps'>DevOps</option>
-								<option value='FrontEnd'>FrontEnd</option>
-								<option value='Backend'>Backend</option>
-								<option value='Qa'>Qa</option>
-							</select>
-						</div>
-			
-						<br />
+						<label htmlFor=''> Job</label>
+						<select
+							required
+							value={this.state.jtype}
+							onChange={this.onChangejtype}
+							className='form-control'>
+							<option>Choose Type</option>
+							<option value='DevOps'>DevOps</option>
+							<option value='FrontEnd'>FrontEnd</option>
+							<option value='Backend'>Backend</option>
+							<option value='Qa'>Qa</option>
+						</select>
+					</div>
+
+					<br />
 					<br />
 
 					<label htmlFor=''>Phone Number</label>
-					<input type='number' required
-									value={this.state.mobile}
-									onChange={this.onChangemobile}/>
+					<input
+						type='number'
+						required
+						value={this.state.mobile}
+						onChange={this.onChangemobile}
+					/>
 					<br />
 					<br />
 					<label htmlFor=''>OderNu</label>
-					<input type='text' required
-									value={this.state.oderNo}
-									// onChange={this.onChangeaddress}
-									/>
+					<input
+						type='text'
+						required
+						value={this.state.oderNo}
+						// onChange={this.onChangeaddress}
+					/>
 					<br />
-					<br /> 
+					<br />
 					<label htmlFor=''>Date</label>
-					<input name='' id='' cols='30' rows='10'required
-									value={this.state.date}
-									onChange={this.onChangedate}/>
-								<br />
-					<br /> 	
+					<input
+						name=''
+						id=''
+						cols='30'
+						rows='10'
+						required
+						value={this.state.date}
+						onChange={this.onChangedate}
+					/>
+					<br />
+					<br />
 
 					<label htmlFor=''>Price</label>
-					<input name='' id='' cols='30' rows='10'
-							value={this.state.price}
-							onChange={this.onChangeprice}
-								/>
-									<br />
+					<input
+						name=''
+						id=''
+						cols='30'
+						rows='10'
+						value={this.state.price}
+						onChange={this.onChangeprice}
+					/>
+					<br />
 					<br />
 
 					<label htmlFor=''>Description</label>
-					<textarea name='' id='' cols='30' rows='10'required
-									value={this.state.description}
-									onChange={this.onChangedescription}/>
-									<br />
+					<textarea
+						name=''
+						id=''
+						cols='30'
+						rows='10'
+						required
+						value={this.state.description}
+						onChange={this.onChangedescription}
+					/>
+					<br />
 					<br />
 
-				
-				
-				
-          <button type='submit'>Update</button>
-				{/* </form> */}
-				</form>
-
-				<form action='' className='form2'>
-					<table>
-						<tr>
-							<td>table data</td>
-						</tr>
-						<tr>
-							<td>table data</td>
-						</tr>
-						<tr>
-							<td>table data</td>
-						</tr>
-						<tr>
-							<td>table data</td>
-						</tr>
-					</table>
-				
+					<button type='submit'>Submit</button>
+					{/* </form> */}
 				</form>
 			</div>
 		);

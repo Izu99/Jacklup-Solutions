@@ -9,12 +9,15 @@ import ellipse1 from "../../images/ellipse1.svg";
 import polygon from "../../images/Polygon.svg";
 import ellipse2 from "../../images/ellipse2.svg";
 import ellipse3 from "../../images/ellipse3.svg";
+ import TableRow from "../Order/myOderRow";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 export default class PersonalDetails extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { employee: [] };
+		this.state = { employee: [] ,myoder:[],search:"" };
 		this.state.Email = this.props.match.params.id;
 	}
 	componentDidMount() {
@@ -35,6 +38,68 @@ export default class PersonalDetails extends Component {
 		return <ProfileTableRow obj={this.state.employee} />;
 	}
 
+	 tabRow1() {
+	 	return this.state.myoder.map(function (object, i) {
+	 		return <TableRow obj={object} key={i} />;
+	 	});	
+	 }
+
+	 componentDidMounta() {
+	 	// alert('email is ' +this.props.match.params.id);
+	 	axios
+	 		.get("http://localhost:4000/myOder/getall/")
+	 		.then((response) => {
+	 			// alert('Pass una')
+	 			// alert('Data Tika :'+response.data)
+	 			this.setState({ myoder: response.data });
+	 		})
+	 		.catch(function (error) {
+	 			console.log(error);
+	 		});
+	 }
+
+	
+
+
+
+	exportPDF = () => {
+		const unit = "pt";
+		const size = "A4"; // Use A1, A2, A3 or A4
+		const orientation = "portrait"; // portrait or landscape
+
+		const marginLeft = 40;
+		const doc = new jsPDF(orientation, unit, size);
+
+		doc.setFontSize(15);
+
+		const title = "My Report";
+		const headers = [
+			[
+				"oderNo",
+				"status",
+				"date",
+				
+			],
+		];
+
+		const data = this.state.myoder.map((elt) => [
+			elt.oderNo,
+			elt.status,
+			elt.date,
+			
+		]);
+
+		let content = {
+			startY: 50,
+			head: headers,
+			body: data,
+		};
+
+		doc.text(title, marginLeft, 40);
+		doc.autoTable(content);
+		doc.save("report.pdf");
+	};
+
 	render() {
 		return (
 			<div className='PersonalDetails'>
@@ -47,14 +112,15 @@ export default class PersonalDetails extends Component {
 				<img src={ellipse1} alt='' className='ellipse1' />
 				<div className='profile'>
 					<img src={profile} alt='' />
-					<h2>Jenny Cruse</h2>
-					<p>Event Planner</p>
+					<h2>{this.state.employee.name}</h2>
+					<p>{this.state.employee.posision}</p>
 				</div>
 				<div className='title1'>
 					<h2>Personal Details</h2>
 				</div>
 
 				{this.tabRow()}
+				{this.tabRow1()}
 				<img src={polygon} alt='' className='polygon1' />
 
 				<div className='title2'>
@@ -72,6 +138,19 @@ export default class PersonalDetails extends Component {
 						{/* <td>{this.props.obj.nic}</td> */}
 					</tr>
 				</table>
+				<center>
+								<button
+									onClick={() => this.exportPDF()}
+									style={{
+										background: "blue",
+										padding: 10,
+										color: "white",
+										border: "none",
+										borderRadius: "20",
+									}}>
+									- Export All -
+								</button>
+							</center>
 				<a href='/orderall'><button type="submit" className="order">Orders</button></a>
 			</div>
 		);
