@@ -35,6 +35,13 @@ Empleeyee = new Schema({
      status: {
         type: String
     }
+    ,
+     status: {
+        type: String
+    } ,
+    empId: {
+       type: String
+   }
 
  },
   {

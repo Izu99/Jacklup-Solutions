@@ -51,9 +51,8 @@ empleeyeeRoutes.route('/update/:id').post(function (req,res){
             empleeyee.password = req.body.password;
             empleeyee.cpassword = req.body.cpassword;
             empleeyee.status = req.body.status;
-         
-
-
+            empleeyee.empId = req.body.empId;
+           
             empleeyee.save().then(business => {
                 res.json('Update Complete');
             })
@@ -112,6 +111,22 @@ empleeyeeRoutes.route('/login').post(function (req, res){
         })
 });
 
+
+empleeyeeRoutes.route('/search/:pathParam1?').get(function (req, res){
+    let search = req.params.pathParam1;
+    // let email = req.params.pathParam2;
+    console.log("your search is "+search);
+
+    // Orders.find({$and:[{date : search},{email : email}]},function (err,srch){
+        Empleeyee.find({$and:[{$or: [{vName: search}, {lName: search},{pNumber: search},{email: search}]}]},function (err,srch){ 
+        if(err)
+            console.log(err);
+        else{
+            res.json(srch)
+        }
+    });
+
+});
 
 
 

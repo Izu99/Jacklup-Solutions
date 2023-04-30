@@ -68,7 +68,7 @@ export default class EmployeeView extends Component {
 					<button type='submit'>Search</button>
 				</form>
 				<p className='add'>
-					<a href=''> + </a>
+					<a href='/employeeadd'> + </a>
 				</p>
 
 				<table class='table table-striped'>
@@ -76,7 +76,7 @@ export default class EmployeeView extends Component {
 					<thead>
 						
 						<th>Name</th>
-						<th>Mobile</th>
+						<th>EmpNU</th>
 						<th>E-mail</th>
 						<th>Position</th>
 						<th>Status</th>
