@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-
+import axios from "axios";
 import "../../Styles/PaymentHistory.css";
+import TableRow from "./paymnetRow";
 
 export default class PaymentHistory extends Component {
 	constructor(props) {

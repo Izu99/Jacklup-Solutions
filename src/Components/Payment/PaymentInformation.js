@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import React, { Component } from "react";
 import axios from "axios";
 import "../../Styles/PaymentInformation.css";
@@ -7,7 +8,7 @@ export default class PaymentInformation extends Component {
 		super(props);
 
 		this.onChangepstatus = this.onChangepstatus.bind(this);
-
+		this.onChangeoderNo = this.onChangeoderNo.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 
 		this.state = {
@@ -17,6 +18,7 @@ export default class PaymentInformation extends Component {
 			date: "",
 			price: "",
 			pstatus: "",
+			payId: "",
 		};
 
 		this.handleSwitchChange = this.handleSwitchChange.bind(this);
@@ -33,6 +35,18 @@ export default class PaymentInformation extends Component {
 			pstatus: e.target.value,
 		});
 	}
+
+	onChangeoderNo(e) {
+		this.setState({
+			oderNo: e.target.value,
+			payId:"Pay"+ e.target.value.substring(0, 4)
+
+		});
+	}
+
+	
+	
+	
 
 	componentDidMount() {
 		axios
@@ -56,6 +70,9 @@ export default class PaymentInformation extends Component {
 	}
 
 	onSubmit(e) {
+
+		this.state.payId = "Pay0" + this.state.oderNo.substring(2, 6);
+
 		let balance = 0;
 
 		if (this.state.pstatus == "full") {
@@ -74,9 +91,10 @@ export default class PaymentInformation extends Component {
 			pstatus: this.state.pstatus,
 			price: this.state.price,
 			jtype: this.state.jtype,
+			payId: this.state.payId,
 		};
 
-		alert("Your balance is - " + this.state.price);
+		alert("Your pstatus is - " + this.state.pstatus);
 
 		axios
 			.post("http://localhost:4000/pay/add", obj)
@@ -95,13 +113,17 @@ export default class PaymentInformation extends Component {
 		return (
 			<div className='PaymentInformation'>
 				<h2 className='title'>Payment Information</h2>
+				<form onSubmit={this.onSubmit}>
 				<form action='' className='form1'>
 					<label htmlFor='payment'>
 						{" "}
 						<p className='radio-title'> Payment Status</p>
-						<input type='radio' name='payment' value='full' />
+
+						<input type='radio' name='payment' value='full'  onChange={this.onChangepstatus}
+										 />
 						Full Payment
-						<input type='radio' name='payment' className='rd1' value='half' />
+						<input type='radio' name='payment' className='rd1' value='half'	
+										onChange={this.onChangepstatus} />
 						Half Payment
 					</label>
 
@@ -157,6 +179,7 @@ export default class PaymentInformation extends Component {
 									<button type='submit'>Pay Now</button>
 								</div>
 							)}
+							</div>
 
 							{/* Company Bank Details */}
 							{this.state.selectedSwitch === "switch2" && (
@@ -174,7 +197,7 @@ export default class PaymentInformation extends Component {
 									<button type='submit'>Pay Now</button>
 								</div>
 							)}
-						</div>
+					
 					</form>
 					<form action='' className='form2'>
 						<h2>Order Summary</h2>
@@ -188,6 +211,7 @@ export default class PaymentInformation extends Component {
 										required
 										readOnly
 										value={this.state.oderNo}
+										onChange={this.onChangeoderNo}
 									/>
 								</td>
 							</tr>
@@ -230,6 +254,7 @@ export default class PaymentInformation extends Component {
 						</table>
 					</form>
 					{/* <button type='submit'>Pay Now</button> */}
+				</form>
 				</form>
 			</div>
 		);
