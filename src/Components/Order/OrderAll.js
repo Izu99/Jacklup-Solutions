@@ -132,7 +132,7 @@ export default class OrderAll extends Component {
 						{/* <table>
 							<h2>Delete Order</h2>
 						</table> */}
-					{/* )} */}
+					{/* )} */}    
 
 					<div className='sidebar'>
 						<button>Order history</button>
