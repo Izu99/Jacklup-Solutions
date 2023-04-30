@@ -16,6 +16,10 @@ Payment = new Schema({
     price: {
         type: String
     }
+    ,
+    payId: {
+        type: String
+    }
  },
   {
     collation: 'payment'

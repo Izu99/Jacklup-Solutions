@@ -31,28 +31,8 @@ export default class PaymentHistory extends Component {
 							<th>Payment</th>
 							<th>Amount</th>
 						</thead>
-						<tr>
-							<td>INV-002</td>
-							<td>Full Payment</td>
-							<td>date</td>
-							<td>Rs. 2000.00</td>
-							<td>
-								<i>
-									<i class='fa-solid fa-ellipsis-vertical'></i>
-								</i>
-							</td>
-						</tr>
-						<tr>
-							<td>INV-002</td>
-							<td>Full Payment</td>
-							<td>date</td>
-							<td>Rs. 2000.00</td>
-							<td>
-								<i>
-									<i class='fa-solid fa-ellipsis-vertical'></i>
-								</i>
-							</td>
-						</tr>
+				
+					
 					</table>
 					<div className='sidebar'>
 						<button>Payment history</button>
