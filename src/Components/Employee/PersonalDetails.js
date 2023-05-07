@@ -138,7 +138,7 @@ export default class PersonalDetails extends Component {
 						{/* <td>{this.props.obj.nic}</td> */}
 					</tr>
 				</table>
-				<center>
+				{/* <center>
 								<button
 									onClick={() => this.exportPDF()}
 									style={{
@@ -150,7 +150,7 @@ export default class PersonalDetails extends Component {
 									}}>
 									- Export All -
 								</button>
-							</center>
+							</center> */}
 				<a href='/orderall'><button type="submit" className="order">Orders</button></a>
 			</div>
 		);

@@ -20,9 +20,8 @@ export default class Payment extends Component {
 	}
 
 	componentDidMount() {
-		// alert('email is ' +this.props.match.params.id);
-		axios
-			.get("http://localhost:4000/pay/getall/")
+        axios.get('http://localhost:4000/pay/search/'+this.props.match.params.pathParam1)
+		
 			.then((response) => {
 				// alert('Pass una')
 				// alert('Data Tika :'+response.data)

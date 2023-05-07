@@ -40,7 +40,7 @@ export default  class Login extends  Component{
 	
 		if ((this.state.email === "admin@gmail.com") && (this.state.password === "admin123")) {
 		  
-			 this.props.history.push('/employeeview/'+Email);
+			 this.props.history.push('/employeeview');
 	
 		}
 		else  {

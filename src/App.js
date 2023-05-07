@@ -45,7 +45,7 @@ class App extends Component {
 						<Route path='/personaldetails/:id' component={PersonalDetails} />
 						<Route path='/adminprofile' component={PersonalDetailsAdmin} />
 						<Route path='/paymenthistory' component={PaymentHistory} />
-						<Route path='/login' component={Login} />
+						<Route exact path='/Login' component={Login} />
 						{/* <Route path='/' component={Login} /> */}
 						{/* <Route path='/orderall' component={OrderAll} /> */}
 

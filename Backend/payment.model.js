@@ -17,7 +17,15 @@ Payment = new Schema({
         type: String
     }
     ,
-    payId: {
+    card: {
+        type: String
+    }
+    ,
+    exdate: {
+        type: String
+    }
+    ,
+    cvv: {
         type: String
     }
  },
