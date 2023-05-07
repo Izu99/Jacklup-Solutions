@@ -136,5 +136,17 @@
 	
 }
 
+.OrderAll button.oder {
+	width: 75px;
+	color: blue;
+	margin-top: 12px;
+	border: none;
+	border-radius: 8px;
+	background-color: transparent;
+	
+	
+}
+
+
 
 

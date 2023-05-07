@@ -21,9 +21,9 @@ export default class OrderAll extends Component {
 	}
 
 	componentDidMount() {
-		// alert('email is ' +this.props.match.params.id);
-		axios
-			.get("http://localhost:4000/myOder/getall/")
+        axios.get('http://localhost:4000/myOder/search/'+this.props.match.params.pathParam1)
+		// axios
+		// 	.get("http://localhost:4000/myOder/getall/")
 			.then((response) => {
 				// alert('Pass una')
 				// alert('Data Tika :'+response.data)

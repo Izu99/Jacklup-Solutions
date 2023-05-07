@@ -120,9 +120,9 @@ export default class OrderAll extends Component {
 
 							<tbody>{this.tabRow()}</tbody>
 						</table>
-						<center>
+						{/* <center>
                         <button onClick={() => this.exportPDF()}style={{background:'blue',padding:10, color:'white', border:'none',borderRadius:'20'}}>- Export All -</button>
-                    </center>
+                    </center> */}
 					  
 
 					<div className='sidebar'>
