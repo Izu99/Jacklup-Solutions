@@ -63,9 +63,16 @@ export default class EmployeeView extends Component {
 				</nav>
 				<img src={ellipse1} alt='' className='ellipse1' />
 				<h2 className='main-header'>Employee</h2>
-				<form action=''>
-					<input type='text' placeholder='search...' />
-					<button type='submit'>Search</button>
+
+				{/* <form onSubmit={this.onSubmit}>
+					<input type='text' placeholder='search...' required value={this.state.search} onChange={this.onChangeSearch} />
+
+					<button type='submit'><a href={"/employeeSearch/" + this.state.search}>Search</a></button>
+				</form>
+				 */}
+				 <form onSubmit={this.onSubmit}>
+					<input type='text' placeholder='search...'  value={this.state.search} onChange={this.onChangeSearch}/>
+					<button type='submit'><a href={"/employeeSearch/" + this.state.search}>Search</a></button>
 				</form>
 				<p className='add'>
 					<a href='/employeeadd'> + Employee Add</a>
@@ -79,7 +86,7 @@ export default class EmployeeView extends Component {
 						<th>EmpNU</th>
 						<th>E-mail</th>
 						<th>Position</th>
-						<th>Status</th>
+						
 						<th>Action</th>
 					</thead>
 					

@@ -93,16 +93,7 @@ export default class OrderAll extends Component {
 									Half Payment
 								</a>
 							</li>
-							{/* <li>
-								<a
-									href='#'
-									// onClick={() => this.handleTabClick("deleteorder")}
-									// className={activeTab === "deleteorder" ? "active" : ""}>
-									>
-									
-									Refund
-								</a>
-							</li> */}
+							
 						</ul>
 					</div>
 					{/* {activeTab === "allorder" && ( */}
@@ -114,25 +105,7 @@ export default class OrderAll extends Component {
 
 							<tbody>{this.tabRow()}</tbody>
 						</table>
-					{/* )} */}
-
-					{/* {activeTab === "completeorder" && ( */}
-						{/* <table>
-							<h2> Complete Order</h2>{" "}
-						</table> */}
-					{/* )} */}
-
-					{/* {activeTab === "ongoingorder" && ( */}
-						{/* <table>
-							<h2>Ongoing Order</h2>
-						</table> */}
-					{/* )} */}
-
-					{/* {activeTab === "deleteorder" && ( */}
-						{/* <table>
-							<h2>Delete Order</h2>
-						</table> */}
-					{/* )} */}    
+					
 
 					<div className='sidebar'>
 						<button>Order history</button>

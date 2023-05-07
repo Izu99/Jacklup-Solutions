@@ -8,22 +8,22 @@ import profileimage from "../../images/profile-image2.svg";
 
 import "../../Styles/EmployeeView.css";
 import axios from "axios";
-import EmployeeRow from "./EmployeeRow";
+import Employesearch from "./EmployeeRow";
 
-export default class EmployeeView extends Component {
+export default class Employeesearch extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { employee: [], search: "" };
-		this.state.Station = this.props.match.params.id;
+		this.state = { employeesearch: [], search: "" };
+		// this.state.Station = this.props.match.params.id;
 
-		this.onChangeSearch = this.onChangeSearch.bind(this);
+		// this.onChangeSearch = this.onChangeSearch.bind(this);
 	}
 
-	onChangeSearch(e) {
-		this.setState({
-			search: e.target.value,
-		});
-	}
+	// onChangeSearch(e) {
+	// 	this.setState({
+	// 		search: e.target.value,
+	// 	});
+	// }
 
 	componentDidMount() {
 		// alert('email is ' +this.props.match.params.id);
@@ -32,7 +32,7 @@ export default class EmployeeView extends Component {
 			.then((response) => {
 				// alert('Pass una')
 				// alert('Data Tika :'+response.data)
-				this.setState({ employee: response.data });
+				this.setState({ employeesearch: response.data });
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -40,8 +40,8 @@ export default class EmployeeView extends Component {
 	}
 
 	tabRow() {
-		return this.state.employee.map(function (object, i) {
-			return <EmployeeRow obj={object} key={i} />;
+		return this.state.employeesearch.map(function (object, i) {
+			return <Employesearch obj={object} key={i} />;
 		});
 		// return <OrderTableRow obj={this.state.orders}/>
 	}
@@ -63,10 +63,7 @@ export default class EmployeeView extends Component {
 				</nav>
 				<img src={ellipse1} alt='' className='ellipse1' />
 				<h2 className='main-header'>Employee</h2>
-				<form action=''>
-					<input type='text' placeholder='search...' />
-					<button type='submit'>Search</button>
-				</form>
+				
 				<p className='add'>
 					<a href='/employeeadd'> + </a>
 				</p>
@@ -79,7 +76,7 @@ export default class EmployeeView extends Component {
 						<th>EmpNU</th>
 						<th>E-mail</th>
 						<th>Position</th>
-						<th>Status</th>
+						
 						<th>Action</th>
 					</thead>
 					

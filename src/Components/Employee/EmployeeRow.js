@@ -32,9 +32,9 @@ class TableRow extends Component {
                <td>
                    {this.props.obj.posision}
                </td>
-               <td>
+               {/* <td>
                    {this.props.obj.status}
-               </td>
+               </td> */}
                <td>
                    <button><Link to={"/EditEmployee/"+this.props.obj._id} className="btn btn-success">Edit</Link></button>
                    {/* <br/><br/> */}  &nbsp;
