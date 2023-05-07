@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import "../../Styles/OrderAll.css";
 import TableRow from "./oderRow";
+import jsPDF from "jspdf";
+import 'jspdf-autotable';
 export default class OrderAll extends Component {
 	// constructor(props) {
 	// 	super(props);
@@ -54,6 +56,32 @@ export default class OrderAll extends Component {
 		});
 		// return <OrderTableRow obj={this.state.orders}/>
 	}
+	exportPDF = () => {
+        const unit = "pt";
+        const size = "A4"; // Use A1, A2, A3 or A4
+        const orientation = "portrait"; // portrait or landscape
+    
+        const marginLeft = 40;
+		const doc = new jsPDF(orientation, unit, size);
+    
+        doc.setFontSize(15);
+    
+        const title = " Report";
+        const headers = [["name", "date"]];
+    
+        const data = this.state.oder.map(elt=> [elt.name, elt.date]);
+    
+        let content = {
+          startY: 50,
+          head: headers,
+          body: data
+        };
+    
+        doc.text(title, marginLeft, 40);
+        doc.autoTable(content);
+        doc.save("report.pdf")
+      }
+
 
 	render() {
 		// const { activeTab } = this.state;
@@ -92,12 +120,15 @@ export default class OrderAll extends Component {
 
 							<tbody>{this.tabRow()}</tbody>
 						</table>
+						<center>
+                        <button onClick={() => this.exportPDF()}style={{background:'blue',padding:10, color:'white', border:'none',borderRadius:'20'}}>- Export All -</button>
+                    </center>
 					  
 
 					<div className='sidebar'>
 						<button>Order history</button>
 						<br />
-					
+						<button onClick={() => this.exportPDF()}>get report</button>
 					</div>
 				</div>
 			</div>
