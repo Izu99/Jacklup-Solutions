@@ -20,9 +20,9 @@ export default class clientOder extends Component {
 	}
 
 	componentDidMount() {
-		// alert('email is ' +this.props.match.params.id);
-		axios
-			.get("http://localhost:4000/myOder/getall/")
+		axios.get('http://localhost:4000/myOder/search/'+this.props.match.params.pathParam1)
+		// axios
+		// 	.get("http://localhost:4000/myOder/getall/")
 			.then((response) => {
 				// alert('Pass una')
 				// alert('Data Tika :'+response.data)
@@ -47,9 +47,8 @@ export default class clientOder extends Component {
 			<div className='OrderAll'>
 				<div className='history'>
 					<h2>Order</h2>
-					
 					<div className='top-nav'>
-						<ul>
+					<ul>
 							<li>
 							<a href={"/clientoderView" }>All </a>
 							</li>
@@ -58,7 +57,7 @@ export default class clientOder extends Component {
 
 							</li> 
 							 <li>
-									<a href={"/completepaymnet/"+complete }>complete</a>
+									<a href={"/completepaymnet/"+ complete }>complete</a>
 							</li> 
 							
 						</ul>

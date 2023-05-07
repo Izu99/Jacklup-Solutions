@@ -29,6 +29,7 @@ export default class Employeesearch extends Component {
 		// alert('email is ' +this.props.match.params.id);
         axios.get('http://localhost:4000/emplooyee/search/'+this.props.match.params.pathParam1)
 		
+		
 			.then((response) => {
 				// alert('Pass una')
 				// alert('Data Tika :'+response.data)

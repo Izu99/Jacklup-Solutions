@@ -29,11 +29,11 @@ class TableRow extends Component {
             
         
                <td>
-               <Link to={"/updateorderinformation/"+this.props.obj._id} className="btn btn-success">Edit Oder</Link>
+               <button className='edit'>  <Link to={"/updateorderinformation/"+this.props.obj._id} className="btn btn-success">Edit Oder</Link></button>
                &nbsp;
-                   <Link to={"/myOders/"+this.props.obj._id} className="btn btn-success">Take Oder</Link>
+               <button className='take'>   <Link to={"/myOders/"+this.props.obj._id} className="btn btn-success">Take Oder</Link></button>
                    {/* <br/><br/> */}  &nbsp;
-                   <button onClick={this.delete} className="btn btn-danger">Delete</button>
+                   <button onClick={this.delete} className='delete'>Delete</button>
                </td>
            </tr>
         );

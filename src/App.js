@@ -25,6 +25,8 @@ import PaymentInformation from "./Components/Payment/PaymentInformation";
 import CardAdd from "./Components/CardAdd";
 
 import myOdersView from "./Components/Order/myOdersView";
+ import completepaymnet from "./Components/Payment/completepaymnet";
+ import pendingpayment from "./Components/Payment/pendingpayment";
 
 import clientoderView from "./Components/Payment/clientoderView";
 import submitOder from "./Components/Order/submitOder";
@@ -60,6 +62,8 @@ class App extends Component {
 						<Route path='/submitOder/:id' component={submitOder} />
 						<Route path='/myOders/:id' component={myOders} />
 						<Route path='/employeeSearch/:pathParam1?' component={employeeSearch} />
+						 <Route path='/completepaymnet/:pathParam1?' component={completepaymnet} /> 
+						 <Route path='/pendingpayment/:pathParam1?' component={pendingpayment} /> 
 						{/* <Redirect path to='/404' Component={PageNotFound}/> */}
 					</Switch>
 				</Router>

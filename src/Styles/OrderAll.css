@@ -84,3 +84,57 @@
 .OrderAll .top-nav ul li a {
 	text-decoration: none;
 }
+
+.OrderAll button a{
+	text-decoration: none;
+	border: none;
+}
+
+.OrderAll button{
+	border: none;
+	background-color: transparent;
+}
+ .OrderAll button.delete {
+	width: 75px;
+	color: red;
+	margin-top: 12px;
+	border: none;
+	border-radius: 8px;
+	background-color: transparent;
+
+} 
+
+
+
+.OrderAll button .edit {
+	width: 75px;
+	color: #807e00;
+	margin-top: 12px;
+	border: none;
+	border-radius: 8px;
+	background-color: transparent;
+}
+
+.OrderAll button a.take {
+	width: 75px;
+	color: blue;
+	margin-top: 12px;
+	border: none;
+	border-radius: 8px;
+	background-color: transparent;
+	
+	
+}
+.OrderAll button.pay {
+	width: 75px;
+	color: blue;
+	margin-top: 12px;
+	border: none;
+	border-radius: 8px;
+	background-color: transparent;
+	
+	
+}
+
+
+

@@ -87,6 +87,21 @@ myOderRoutes.route('/getall').get(function(req, res) {
 });
 
 
+myOderRoutes.route('/search/:pathParam1?').get(function (req, res){
+    let search = req.params.pathParam1;
+    // let email = req.params.pathParam2;
+    console.log("your search is "+search);
+
+    // Orders.find({$and:[{date : search},{email : email}]},function (err,srch){
+        MyOder.find({$and:[{$or: [{status: search}]}]},function (err,srch){ 
+        if(err)
+            console.log(err);
+        else{
+            res.json(srch)
+        }
+    });
+
+});
 
 
 

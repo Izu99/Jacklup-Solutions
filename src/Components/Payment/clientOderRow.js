@@ -33,7 +33,7 @@ class cTableRow extends Component {
             
         
                <td>
-                   <Link to={"/paymentinformation/"+this.props.obj._id} className="btn btn-success">pay</Link>
+                 <button className='pay'>  <Link to={"/paymentinformation/"+this.props.obj._id} className="btn btn-success">pay</Link></button>
                    {/* <br/><br/> */}  &nbsp;
                    {/* <button onClick={this.delete} className="btn btn-danger">Delete</button> */}
                </td>

@@ -70,39 +70,17 @@ export default class OrderAll extends Component {
 									// className={activeTab === "allorder" ? "active" : ""}>
 									>
 									
-									All Payment
-								</a>
-							</li>
-							<li>
-								<a
-									href='#'
-									// onClick={() => this.handleTabClick("completeorder")}
-									// className={activeTab === "completeorder" ? "active" : ""}>
-									>
-									
-									Full Payment
-								</a>
-							</li>
-							<li>
-								<a
-									href='#'
-									// onClick={() => this.handleTabClick("ongoingorder")}
-									// className={activeTab === "ongoingorder" ? "active" : ""}>
-									>
-									
-									Half Payment
+									All Oders
 								</a>
 							</li>
 							{/* <li>
-								<a
-									href='#'
-									// onClick={() => this.handleTabClick("deleteorder")}
-									// className={activeTab === "deleteorder" ? "active" : ""}>
-									>
-									
-									Refund
-								</a>
+							<a href={"/halfpayment" }>Full Payment</a>
+
 							</li> */}
+							{/* <li>
+									<a href={"/halfpayment" }>Haf payment</a>
+							</li> */}
+							
 						</ul>
 					</div>
 					{/* {activeTab === "allorder" && ( */}
@@ -114,30 +92,12 @@ export default class OrderAll extends Component {
 
 							<tbody>{this.tabRow()}</tbody>
 						</table>
-					{/* )} */}
-
-					{/* {activeTab === "completeorder" && ( */}
-						{/* <table>
-							<h2> Complete Order</h2>{" "}
-						</table> */}
-					{/* )} */}
-
-					{/* {activeTab === "ongoingorder" && ( */}
-						{/* <table>
-							<h2>Ongoing Order</h2>
-						</table> */}
-					{/* )} */}
-
-					{/* {activeTab === "deleteorder" && ( */}
-						{/* <table>
-							<h2>Delete Order</h2>
-						</table> */}
-					{/* )} */}    
+					  
 
 					<div className='sidebar'>
 						<button>Order history</button>
 						<br />
-						<button>Order Tracking </button>
+					
 					</div>
 				</div>
 			</div>
