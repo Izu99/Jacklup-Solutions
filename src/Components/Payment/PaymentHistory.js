@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
  import "../../Styles/OrderAll.css";
  import TableRow from "./paymnetRow";
+ import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 export default class Payment extends Component {
 
@@ -39,14 +41,55 @@ export default class Payment extends Component {
 	 	});	
 	 }
 
+	 exportPDF = () => {
+		const unit = "pt";
+		const size = "A4"; // Use A1, A2, A3 or A4
+		const orientation = "portrait"; // portrait or landscape
+
+		const marginLeft = 40;
+		const doc = new jsPDF(orientation, unit, size);
+
+		doc.setFontSize(15);
+
+		const title = "My Report";
+		const headers = [
+			[
+				"payId",
+				"pstatus",
+				"date",
+				"price",
+				
+			],
+		];
+
+		const data = this.state.payment.map((elt) => [
+			elt.payId,
+			elt.pstatus,
+			elt.date,
+			elt.price,
+			
+		]);
+
+		let content = {
+			startY: 50,
+			head: headers,
+			body: data,
+		};
+
+		doc.text(title, marginLeft, 40);
+		doc.autoTable(content);
+		doc.save("report.pdf");
+	};
+
+
 
 	render() {
-		const pending = "pending";
-		const complete = "complete";
+		const half = "half";
+		const full = "full";
 		return (
 			<div className='OrderAll'>
 				<div className='history'>
-					<h2>Order</h2>
+					<h2>Payment History </h2>
 					
 					<div className='top-nav'>
 						<ul>
@@ -54,11 +97,11 @@ export default class Payment extends Component {
 							<a href={"/clientoderView" }>All </a>
 							</li>
 							 <li>
-							 <a href={"/pendingpayment/" + pending}>Pending</a>
+							 <a href={"/halfpayment/" + half}>half payment</a>
 
 							</li> 
 							 <li>
-									<a href={"/completepaymnet/"+complete }>complete</a>
+									<a href={"/fullpayment/"+full }>full payment</a>
 							</li> 
 							
 						</ul>
@@ -77,6 +120,7 @@ export default class Payment extends Component {
 					<div className='sidebar'>
 						<button>Order history</button>
 						<br />
+						<button onClick={() => this.exportPDF()} >Report</button>
 						
 					</div>
 				</div>

@@ -40,24 +40,24 @@ export default class Payment extends Component {
 
 
 	render() {
-		const pending = "pending";
-		const complete = "complete";
+		const half = "half";
+		const full = "full";
 		return (
 			<div className='OrderAll'>
 				<div className='history'>
-					<h2>Order</h2>
+					<h2>Payment History </h2>
 					
 					<div className='top-nav'>
 						<ul>
 							<li>
-							<a href={"/clientoderView" }>All </a>
+							<a href={"/paymenthistory" }>All </a>
 							</li>
 							 <li>
-							 <a href={"/pendingpayment/" + pending}>Pending</a>
+							 <a href={"/halfpayment/" + half}>half payment</a>
 
 							</li> 
 							 <li>
-									<a href={"/completepaymnet/"+complete }>complete</a>
+									<a href={"/fullpayment/"+full }>full payment</a>
 							</li> 
 							
 						</ul>

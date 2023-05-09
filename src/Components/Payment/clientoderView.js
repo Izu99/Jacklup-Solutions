@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
  import "../../Styles/OrderAll.css";
  import TableRow from "./clientOderRow";
+ import jsPDF from "jspdf";
+ import "jspdf-autotable";
 
 export default class clientOder extends Component {
 
@@ -38,7 +40,45 @@ export default class clientOder extends Component {
 	 		return <TableRow obj={object} key={i} />;
 	 	});	
 	 }
+	 exportPDF = () => {
+		const unit = "pt";
+		const size = "A4"; // Use A1, A2, A3 or A4
+		const orientation = "portrait"; // portrait or landscape
 
+		const marginLeft = 40;
+		const doc = new jsPDF(orientation, unit, size);
+
+		doc.setFontSize(15);
+
+		const title = "My Report";
+		const headers = [
+			[
+				"oderNo",
+				"status",
+				"date",
+				
+				
+			],
+		];
+
+		const data = this.state.coder.map((elt) => [
+			elt.oderNo,
+			elt.status,
+			elt.date,
+			
+			
+		]);
+
+		let content = {
+			startY: 50,
+			head: headers,
+			body: data,
+		};
+
+		doc.text(title, marginLeft, 40);
+		doc.autoTable(content);
+		doc.save("report.pdf");
+	};
 
 	render() {
 		const pending = "pending";
@@ -76,7 +116,7 @@ export default class clientOder extends Component {
 					<div className='sidebar'>
 						<button>Order history</button>
 						<br />
-						
+						<button onClick={() => this.exportPDF()} >report</button>
 					</div>
 				</div>
 			</div>

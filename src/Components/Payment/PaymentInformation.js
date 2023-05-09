@@ -9,30 +9,49 @@ export default class PaymentInformation extends Component {
 
 		this.onChangepstatus = this.onChangepstatus.bind(this);
 		this.onChangeoderNo = this.onChangeoderNo.bind(this);
+
+		this.onChangecard = this.onChangecard.bind(this);
+		this.onChangeexdate = this.onChangeexdate.bind(this);
+		this.onChangecvv = this.onChangecvv.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 
 		this.state = {
-			selectedSwitch: "switch1",
 			oderNo: "",
 			jtype: "",
 			date: "",
 			price: "",
 			pstatus: "",
 			payId: "",
+			card: "",
+			exdate: "",
+			cvv: "",
 		};
 
-		this.handleSwitchChange = this.handleSwitchChange.bind(this);
-	}
-
-	handleSwitchChange(event) {
-		this.setState({
-			selectedSwitch: event.target.value,
-		});
+		
 	}
 
 	onChangepstatus(e) {
 		this.setState({
 			pstatus: e.target.value,
+		});
+	}
+
+	onChangecard(e) {
+		this.setState({
+			card: e.target.value,
+		});
+	}
+
+	onChangeexdate(e) {
+		this.setState({
+			exdate: e.target.value,
+		});
+	}
+
+
+	onChangecvv(e) {
+		this.setState({
+			cvv: e.target.value,
 		});
 	}
 
@@ -93,10 +112,19 @@ export default class PaymentInformation extends Component {
 			price: this.state.price,
 			jtype: this.state.jtype,
 			payId: this.state.payId,
+			card: this.state.card,
+			exdate: this.state.exdate,
+			cvv: this.state.cvv,
 		};
+		// const today = new Date(); // get today's date
+		// const minExDate = new  Date("04/09/2023"); // set minimum expiration date to October 1, 2023
+		// const maxExDate = new Date("10/09/2028");
 
 		alert("Your payId is - " + this.state.payId);
 
+		if (this.state.card.length === 12) {
+			// if (this.state.exdate > minExDate && this.state.exdate < maxExDate) {
+				if (this.state.cvv.length === 3 ) {
 		axios
 			.post("http://localhost:4000/pay/add", obj)
 
@@ -104,11 +132,26 @@ export default class PaymentInformation extends Component {
 				alert("add Successfully");
 				this.setState({
 					pstatus: "",
+					card: "",
+					exdate: "",
+					cvv: "",
 				});
 				console.log(res.data);
 			});
 		this.props.history.push("/paymenthistory");
+	} 
+	else {
+		alert("pleace enter 3 digits cvv number");
 	}
+	// } 
+	// else {
+	// 	alert("Invalid Card Number pleace enter 2023 or less than 2029");
+	// }
+} 
+else {
+	alert("Invalid Card Number pleace enter 12 digits");
+}
+}
 
 	render() {
 		return (
@@ -128,78 +171,42 @@ export default class PaymentInformation extends Component {
 						Half Payment
 					</label>
 
-					<form onSubmit={this.onSubmit}>
+					
 						<br />
 						<br />
 						<p className='radio-title'>Payment Type</p>
-						<label>
-							<input
-								type='radio'
-								name='switch'
-								value='switch1'
-								checked={this.state.selectedSwitch === "switch1"}
-								onChange={this.handleSwitchChange}
-							/>
-							Credit Card
-						</label>
-						<label>
-							<input
-								type='radio'
-								name='switch'
-								value='switch2'
-								checked={this.state.selectedSwitch === "switch2"}
-								onChange={this.handleSwitchChange}
-								className='rd1'
-							/>
-							Bank Deposit
-						</label>
+					
+					
 						<div className='switch'>
-							{/* Credit Card details retrieve from the table */}
-							{this.state.selectedSwitch === "switch1" && (
+						
+							
 								<div className='switch2'>
 									<table>
 										<tr>
 											<td className='details'>Card Number</td>
 											<td>
-												<input type='text' />
+												<input type='text' required value={this.state.card}	onChange={this.onChangecard} />
 											</td>
 										</tr>
 										<tr>
 											<td className='details'> Expire Date</td>
 											<td>
-												<input type='date' />
+												<input type='date' required value={this.state.exdate}	onChange={this.onChangeexdate}  />
 											</td>
 										</tr>
 										<tr>
 											<td className='details'>Cvv Number</td>
 											<td>
-												<input type='text' />
+												<input type='text' required value={this.state.cvv}	onChange={this.onChangecvv} />
 											</td>
 										</tr>
 									</table>
-									{/* <button type='submit'>Pay Now</button> */}
+									
 								</div>
-							)}
 							</div>
-
-							{/* Company Bank Details */}
-							{this.state.selectedSwitch === "switch2" && (
-								<div className='switch1'>
-									<p className='bank-title'>Bank Information</p>
-									<p className='details'>Name: Jacklup Solution</p>
-									<p className='details'>Acc Number: 10000000</p>
-									<p className='details'>Bank: BOC</p>
-									<p className='details'>Branch: Piliyandala</p>
-
-									<label htmlFor=''>
-										Upload Official Bank Statement
-										<input type='file' />
-									</label>
-									{/* <button type='submit'>Pay Now</button> */}
-								</div>
-							)}
-					
-					</form>
+							
+				
+				
 					<form action='' className='form2'>
 						<h2>Order Summary</h2>
 						<table>

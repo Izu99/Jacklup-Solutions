@@ -28,6 +28,10 @@ Payment = new Schema({
     cvv: {
         type: String
     }
+    ,
+    payId: {
+        type: String
+    }
  },
   {
     collation: 'payment'

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
  import "../../Styles/OrderAll.css";
- import TableRow from "./paymnetRow";
+ import TableRowfull from "./paymnetRow";
 
-export default class Payment extends Component {
+export default class Paymentfull extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = { payment: [], search: "" };
+		this.state = { paymentfull: [], search: "" };
 		this.state.Station = this.props.match.params.id;
 
 		this.onChangeSearch = this.onChangeSearch.bind(this);
@@ -20,13 +20,11 @@ export default class Payment extends Component {
 	}
 
 	componentDidMount() {
-		// alert('email is ' +this.props.match.params.id);
-		axios
-			.get("http://localhost:4000/pay/getall/")
+		axios.get('http://localhost:4000/pay/search/'+this.props.match.params.pathParam1)
 			.then((response) => {
 				// alert('Pass una')
 				// alert('Data Tika :'+response.data)
-				this.setState({ payment: response.data });
+				this.setState({ paymentfull: response.data });
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -34,31 +32,31 @@ export default class Payment extends Component {
 	}
 
 	 tabRow() {
-	 	return this.state.payment.map(function (object, i) {
-	 		return <TableRow obj={object} key={i} />;
+	 	return this.state.paymentfull.map(function (object, i) {
+	 		return <TableRowfull obj={object} key={i} />;
 	 	});	
 	 }
 
 
 	render() {
-		const pending = "pending";
-		const complete = "complete";
+		const half = "half";
+		const full = "full";
 		return (
 			<div className='OrderAll'>
 				<div className='history'>
-					<h2>Order</h2>
+					<h2>Payment History </h2>
 					
 					<div className='top-nav'>
 						<ul>
 							<li>
-							<a href={"/clientoderView" }>All </a>
+							<a href={"/paymenthistory" }>All </a>
 							</li>
 							 <li>
-							 <a href={"/pendingpayment/" + pending}>Pending</a>
+							 <a href={"/halfpayment/" + half}>half payment</a>
 
 							</li> 
 							 <li>
-									<a href={"/completepaymnet/"+complete }>complete</a>
+									<a href={"/fullpayment/"+full }>full payment</a>
 							</li> 
 							
 						</ul>
